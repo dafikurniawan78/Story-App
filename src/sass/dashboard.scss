@@ -1,0 +1,421 @@
+@use 'variable' as v;
+@use 'mixins' as m;
+ 
+// ==============================
+// Hero Section
+// ==============================
+.hero {
+  @include m.gradient-hero;
+  color: white;
+  padding: 5rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+ 
+  &::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(v.$primary, 0.25) 0%, transparent 60%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+ 
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(v.$accent, 0.15) 0%, transparent 60%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+ 
+  &__inner {
+    position: relative;
+    z-index: 1;
+  }
+ 
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-2;
+    background: rgba(v.$primary-light, 0.15);
+    border: 1px solid rgba(v.$primary-light, 0.25);
+    color: v.$primary-light;
+    padding: v.$space-2 v.$space-4;
+    border-radius: v.$border-radius-pill;
+    font-size: v.$font-size-xs;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: v.$space-5;
+    backdrop-filter: blur(10px);
+  }
+ 
+  &__title {
+    font-family: v.$font-display;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: v.$space-5;
+    letter-spacing: -0.02em;
+ 
+    @include m.respond-to('md') {
+      font-size: v.$font-size-4xl;
+    }
+ 
+    span {
+      background: linear-gradient(135deg, v.$primary-light, v.$accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+ 
+  &__subtitle {
+    font-size: v.$font-size-lg;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 520px;
+    margin-bottom: v.$space-8;
+    line-height: 1.8;
+  }
+ 
+  &__cta {
+    display: flex;
+    align-items: center;
+    gap: v.$space-4;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+ 
+  &__btn-primary {
+    @include m.btn-base;
+    background: v.$primary;
+    color: white;
+    padding: v.$space-4 v.$space-8;
+    font-size: v.$font-size-base;
+    box-shadow: 0 10px 30px rgba(v.$primary, 0.4);
+ 
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(v.$primary, 0.6);
+      background: v.$primary-light;
+      color: v.$secondary;
+    }
+  }
+ 
+  &__btn-secondary {
+    @include m.btn-base;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    padding: v.$space-4 v.$space-8;
+    font-size: v.$font-size-base;
+    backdrop-filter: blur(12px);
+ 
+    &:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-3px);
+    }
+  }
+ 
+  &__stats {
+    display: flex;
+    align-items: center;
+    gap: v.$space-8;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-top: v.$space-12;
+    padding-top: v.$space-8;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+ 
+  &__stat {
+    &-number {
+      font-family: v.$font-display;
+      font-size: v.$font-size-3xl;
+      font-weight: 800;
+      color: white;
+      line-height: 1;
+    }
+ 
+    &-label {
+      font-size: v.$font-size-xs;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: v.$space-2;
+      font-weight: 600;
+    }
+  }
+}
+ 
+// ==============================
+// Feature Highlight (Hero cards)
+// ==============================
+.hero-feature {
+  display: flex;
+  align-items: center;
+  gap: v.$space-4;
+  padding: v.$space-4 v.$space-5;
+  border-radius: v.$border-radius-xl;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  transition: transform v.$transition-slow, background v.$transition-base, border-color v.$transition-base;
+ 
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(-10px) translateY(-5px);
+  }
+ 
+  &:nth-child(2) {
+    transform: translateX(40px);
+    &:hover { transform: translateX(30px) translateY(-5px); }
+  }
+ 
+  &:nth-child(3) {
+    transform: translateX(20px);
+    &:hover { transform: translateX(10px) translateY(-5px); }
+  }
+ 
+  &__icon {
+    padding: v.$space-3;
+    border-radius: 50%;
+    background: linear-gradient(135deg, v.$primary, v.$primary-dark);
+    color: white;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(v.$primary, 0.3);
+  }
+ 
+  &__title {
+    font-weight: 700;
+    color: white;
+    font-size: v.$font-size-base;
+    margin-bottom: 2px;
+  }
+ 
+  &__desc {
+    font-size: v.$font-size-sm;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+ 
+// ==============================
+// Stories Section
+// ==============================
+.stories-section {
+  padding: v.$space-12 0 v.$space-16;
+}
+ 
+.section-header {
+  @include m.flex-between;
+  margin-bottom: v.$space-8;
+  flex-wrap: wrap;
+  gap: v.$space-4;
+ 
+  &__title {
+    font-family: v.$font-display;
+    font-size: v.$font-size-2xl;
+    color: v.$text-dark;
+ 
+    span {
+      color: v.$primary;
+    }
+  }
+ 
+  &__subtitle {
+    font-size: v.$font-size-sm;
+    color: v.$text-muted;
+    margin-top: v.$space-1;
+  }
+}
+ 
+// ==============================
+// Story Card
+// ==============================
+.story-card {
+  @include m.card-base;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+ 
+  &__image-wrap {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+ 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform v.$transition-slow;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.3) 0%, transparent 50%);
+      pointer-events: none;
+    }
+  }
+ 
+  &:hover &__image-wrap img {
+    transform: scale(1.04);
+  }
+ 
+  &__badge {
+    position: absolute;
+    top: v.$space-3;
+    right: v.$space-3;
+    background: rgba(v.$secondary, 0.85);
+    color: white;
+    font-size: v.$font-size-xs;
+    padding: v.$space-1 v.$space-3;
+    border-radius: v.$border-radius-pill;
+    backdrop-filter: blur(6px);
+    font-weight: 500;
+  }
+ 
+  &__body {
+    padding: v.$space-6;
+    padding-top: v.$space-8;
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+ 
+  &__author {
+    position: absolute;
+    top: -24px;
+    left: v.$space-6;
+    right: v.$space-6;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+ 
+  &__author-info {
+    display: flex;
+    align-items: flex-end;
+    gap: v.$space-3;
+  }
+ 
+  &__avatar {
+    @include m.avatar(48px);
+    background: linear-gradient(135deg, v.$primary-light, v.$primary-dark);
+    color: white;
+    border: 4px solid v.$surface;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+ 
+  &__author-text {
+    padding-bottom: 4px;
+  }
+
+  &__author-name {
+    font-weight: 700;
+    font-size: v.$font-size-base;
+    color: v.$text-dark;
+    line-height: 1.2;
+  }
+ 
+  &__date {
+    font-size: v.$font-size-xs;
+    color: v.$text-muted;
+    margin-top: 2px;
+  }
+ 
+  &__description {
+    font-size: v.$font-size-sm;
+    color: v.$text-muted;
+    line-height: 1.65;
+    flex: 1;
+    @include m.text-clamp(3);
+  }
+ 
+  &__footer {
+    @include m.flex-between;
+    margin-top: v.$space-4;
+    padding-top: v.$space-4;
+    border-top: 1px solid v.$border-color;
+  }
+ 
+  &__actions {
+    display: flex;
+    gap: v.$space-2;
+  }
+ 
+  &__action-btn {
+    @include m.btn-base;
+    background: v.$surface-alt;
+    color: v.$text-muted;
+    padding: v.$space-2 v.$space-3;
+    font-size: v.$font-size-xs;
+    border-radius: v.$border-radius;
+ 
+    &:hover {
+      background: v.$primary;
+      color: white;
+    }
+  }
+ 
+  &__read-btn {
+    @include m.btn-base;
+    background: transparent;
+    color: v.$primary;
+    font-size: v.$font-size-xs;
+    padding: v.$space-2 v.$space-3;
+    border: 1.5px solid v.$primary;
+    border-radius: v.$border-radius;
+ 
+    &:hover {
+      background: v.$primary;
+      color: white;
+    }
+  }
+}
+ 
+// ==============================
+// Empty State
+// ==============================
+.empty-state {
+  text-align: center;
+  padding: v.$space-16 v.$space-8;
+  color: v.$text-muted;
+ 
+  &__icon {
+    font-size: 3rem;
+    margin-bottom: v.$space-4;
+    opacity: 0.4;
+  }
+ 
+  &__title {
+    font-family: v.$font-display;
+    font-size: v.$font-size-xl;
+    color: v.$text-dark;
+    margin-bottom: v.$space-2;
+  }
+}
+ 
+// ==============================
+// Toast
+// ==============================
+.toast-story {
+  border-left: 4px solid v.$primary;
+  border-radius: v.$border-radius;
+  box-shadow: v.$shadow-lg;
+}

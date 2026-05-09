@@ -1,0 +1,35 @@
+@use 'variable' as v;
+@use 'base';
+@use 'navbar';
+@use 'dashboard';
+@use 'add-story';
+@use 'about';
+@use 'footer';
+
+// Kustomisasi Bootstrap (Saran 1 - 5 komponen)
+$primary: v.$primary;
+$secondary: v.$secondary;
+$success: v.$success;
+$danger: v.$danger;
+$warning: v.$accent;
+$light: v.$surface-alt;
+$dark: v.$secondary;
+
+$border-radius: v.$border-radius;
+$border-radius-sm: v.$border-radius-sm;
+$border-radius-lg: v.$border-radius-lg;
+$border-radius-pill: v.$border-radius-pill;
+
+// 1. Alert Customization
+$alert-border-radius: v.$border-radius-lg;
+// 2. Card Customization
+$card-border-radius: v.$border-radius-lg;
+// 3. Modal Customization
+$modal-content-border-radius: v.$border-radius-xl;
+// 4. Form/Input Customization
+$input-border-radius: v.$border-radius;
+// 5. Button Customization
+$btn-border-radius: v.$border-radius-pill;
+
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";

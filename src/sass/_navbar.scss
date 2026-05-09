@@ -1,0 +1,150 @@
+@use 'variable' as v;
+@use 'mixins' as m;
+ 
+// ==============================
+// App Navbar
+// ==============================
+.app-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1050;
+  height: v.$navbar-height;
+  background: v.$secondary;
+  @include m.flex-between;
+  padding: 0 v.$space-6;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+ 
+  &__brand {
+    @include m.flex-center;
+    gap: v.$space-3;
+    text-decoration: none;
+ 
+    &-icon {
+      width: 40px;
+      height: 40px;
+      @include m.gradient-primary;
+      border-radius: v.$border-radius-sm;
+      @include m.flex-center;
+      color: white;
+      font-size: 1.2rem;
+    }
+ 
+    &-text {
+      font-family: v.$font-display;
+      font-size: v.$font-size-xl;
+      font-weight: 700;
+      color: white;
+      letter-spacing: -0.5px;
+ 
+      span {
+        color: v.$accent;
+      }
+    }
+  }
+ 
+  &__actions {
+    @include m.flex-center;
+    gap: v.$space-3;
+  }
+ 
+  &__menu-btn {
+    @include m.btn-base;
+    background: transparent;
+    color: white;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    padding: v.$space-2 v.$space-4;
+ 
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.6);
+      color: white;
+    }
+  }
+ 
+  &__add-btn {
+    @include m.btn-base;
+    @include m.gradient-primary;
+    color: white;
+    padding: v.$space-2 v.$space-5;
+ 
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(v.$primary, 0.5);
+      color: white;
+    }
+  }
+}
+ 
+// ==============================
+// Offcanvas Sidebar
+// ==============================
+.offcanvas-story {
+  background: v.$secondary !important;
+  color: white;
+  max-width: 300px;
+ 
+  &__header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: v.$space-5 v.$space-6;
+ 
+    .offcanvas-title {
+      font-family: v.$font-display;
+      font-size: v.$font-size-xl;
+      color: v.$accent !important;
+    }
+ 
+    .btn-close {
+      filter: invert(1) brightness(2);
+    }
+  }
+ 
+  &__body {
+    padding: v.$space-6;
+  }
+ 
+  &__nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-2;
+ 
+    li a {
+      display: flex;
+      align-items: center;
+      gap: v.$space-3;
+      padding: v.$space-3 v.$space-4;
+      color: rgba(255, 255, 255, 0.75);
+      border-radius: v.$border-radius;
+      font-weight: 500;
+      transition: all v.$transition-base;
+      text-decoration: none;
+ 
+      i {
+        width: 20px;
+        color: v.$primary-light;
+      }
+ 
+      &:hover,
+      &.active {
+        background: rgba(255, 255, 255, 0.08);
+        color: white;
+        padding-left: v.$space-5;
+      }
+    }
+  }
+ 
+  &__divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: v.$space-4 0;
+  }
+ 
+  &__footer {
+    font-size: v.$font-size-xs;
+    color: rgba(255, 255, 255, 0.3);
+    text-align: center;
+    margin-top: auto;
+  }
+}

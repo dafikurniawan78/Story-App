@@ -1,0 +1,373 @@
+@use 'variable' as v;
+@use 'mixins' as m;
+ 
+.add-story-page {
+  min-height: 100vh;
+  background: v.$surface-alt;
+}
+ 
+// ==============================
+// Page Hero
+// ==============================
+.add-story-hero {
+  @include m.gradient-hero;
+  padding: v.$space-12 0 v.$space-8;
+  color: white;
+ 
+  &__breadcrumb {
+    font-size: v.$font-size-sm;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: v.$space-3;
+ 
+    a {
+      color: rgba(255, 255, 255, 0.7);
+ 
+      &:hover {
+        color: v.$accent;
+      }
+    }
+ 
+    span {
+      margin: 0 v.$space-2;
+    }
+  }
+ 
+  &__title {
+    font-family: v.$font-display;
+    font-size: v.$font-size-3xl;
+    font-weight: 700;
+ 
+    span {
+      color: v.$primary-light;
+    }
+  }
+ 
+  &__subtitle {
+    font-size: v.$font-size-base;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: v.$space-2;
+  }
+}
+ 
+// ==============================
+// Form Container
+// ==============================
+.form-container {
+  max-width: 760px;
+  margin: 0 auto;
+  transform: translateY(-#{v.$space-8});
+ 
+  @include m.respond-to('md') {
+    transform: translateY(-#{v.$space-6});
+  }
+}
+ 
+.story-form-card {
+  background: v.$surface;
+  border-radius: v.$border-radius-xl;
+  box-shadow: v.$shadow-xl;
+  overflow: hidden;
+  border: 1px solid v.$border-color;
+ 
+  &__header {
+    @include m.gradient-primary;
+    padding: v.$space-5 v.$space-8;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: v.$space-3;
+ 
+    i {
+      font-size: 1.5rem;
+    }
+ 
+    h5 {
+      font-family: v.$font-display;
+      font-size: v.$font-size-lg;
+      margin: 0;
+    }
+ 
+    p {
+      font-size: v.$font-size-xs;
+      opacity: 0.8;
+      margin: 0;
+    }
+  }
+ 
+  &__body {
+    padding: v.$space-8;
+ 
+    @include m.respond-to('md') {
+      padding: v.$space-6;
+    }
+  }
+}
+ 
+// ==============================
+// Form Fields
+// ==============================
+.form-field {
+  margin-bottom: v.$space-6;
+ 
+  &__label {
+    display: block;
+    font-weight: 600;
+    font-size: v.$font-size-sm;
+    color: v.$text-dark;
+    margin-bottom: v.$space-2;
+ 
+    .required {
+      color: v.$danger;
+      margin-left: v.$space-1;
+    }
+  }
+ 
+  &__hint {
+    font-size: v.$font-size-xs;
+    color: v.$text-muted;
+    margin-top: v.$space-1;
+  }
+}
+ 
+.custom-input {
+  width: 100%;
+  padding: v.$space-3 v.$space-4;
+  border: 1.5px solid v.$border-color;
+  border-radius: v.$border-radius;
+  font-family: v.$font-body;
+  font-size: v.$font-size-sm;
+  color: v.$text-dark;
+  background: v.$surface;
+  transition: border-color v.$transition-base, box-shadow v.$transition-base;
+  outline: none;
+ 
+  &::placeholder {
+    color: lighten(v.$text-muted, 15%);
+  }
+ 
+  &:focus {
+    border-color: v.$primary;
+    box-shadow: 0 0 0 3px rgba(v.$primary, 0.12);
+  }
+ 
+  &.is-invalid {
+    border-color: v.$danger;
+ 
+    &:focus {
+      box-shadow: 0 0 0 3px rgba(v.$danger, 0.12);
+    }
+  }
+ 
+  &.is-valid {
+    border-color: v.$success;
+  }
+}
+ 
+textarea.custom-input {
+  resize: vertical;
+  min-height: 140px;
+}
+ 
+// ==============================
+// Character Count
+// ==============================
+.char-count {
+  text-align: right;
+  font-size: v.$font-size-xs;
+  color: v.$text-muted;
+  margin-top: v.$space-1;
+  transition: color v.$transition-base;
+ 
+  &.warning {
+    color: v.$accent;
+  }
+ 
+  &.danger {
+    color: v.$danger;
+  }
+}
+ 
+// ==============================
+// Photo Upload
+// ==============================
+.photo-upload {
+  border: 2px dashed v.$border-color;
+  border-radius: v.$border-radius-lg;
+  padding: v.$space-10 v.$space-6;
+  text-align: center;
+  cursor: pointer;
+  transition: all v.$transition-base;
+  background: v.$surface-alt;
+  position: relative;
+ 
+  &:hover,
+  &.drag-over {
+    border-color: v.$primary;
+    background: rgba(v.$primary, 0.04);
+  }
+ 
+  &.has-file {
+    border-style: solid;
+    border-color: v.$success;
+    background: rgba(v.$success, 0.04);
+  }
+ 
+  &__icon {
+    font-size: 2.5rem;
+    color: v.$text-muted;
+    margin-bottom: v.$space-3;
+    transition: color v.$transition-base;
+  }
+ 
+  &:hover &__icon {
+    color: v.$primary;
+  }
+ 
+  &__title {
+    font-weight: 600;
+    color: v.$text-dark;
+    margin-bottom: v.$space-1;
+    font-size: v.$font-size-sm;
+  }
+ 
+  &__subtitle {
+    font-size: v.$font-size-xs;
+    color: v.$text-muted;
+  }
+ 
+  &__input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+  }
+ 
+  &__preview {
+    margin-top: v.$space-4;
+    border-radius: v.$border-radius;
+    overflow: hidden;
+    max-height: 220px;
+ 
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+  }
+ 
+  &__file-name {
+    margin-top: v.$space-3;
+    font-size: v.$font-size-xs;
+    color: v.$success;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: v.$space-2;
+  }
+}
+ 
+// ==============================
+// Form Actions
+// ==============================
+.form-actions {
+  @include m.flex-between;
+  flex-wrap: wrap;
+  gap: v.$space-3;
+  padding-top: v.$space-6;
+  border-top: 1px solid v.$border-color;
+  margin-top: v.$space-6;
+ 
+  &__cancel {
+    @include m.btn-base;
+    background: transparent;
+    color: v.$text-muted;
+    border: 1.5px solid v.$border-color;
+ 
+    &:hover {
+      background: v.$surface-alt;
+      color: v.$text-dark;
+    }
+  }
+ 
+  &__submit {
+    @include m.btn-base;
+    @include m.gradient-primary;
+    color: white;
+    padding: v.$space-3 v.$space-8;
+    font-size: v.$font-size-base;
+ 
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(v.$primary, 0.45);
+      color: white;
+    }
+ 
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+ 
+// ==============================
+// Alert custom
+// ==============================
+.alert-story {
+  border: none;
+  border-radius: v.$border-radius-lg;
+  padding: v.$space-4 v.$space-5;
+  font-size: v.$font-size-sm;
+ 
+  &.alert-success {
+    background: rgba(v.$success, 0.1);
+    color: darken(v.$success, 10%);
+    border-left: 4px solid v.$success;
+  }
+ 
+  &.alert-danger {
+    background: rgba(v.$danger, 0.08);
+    color: darken(v.$danger, 10%);
+    border-left: 4px solid v.$danger;
+  }
+}
+ 
+// ==============================
+// Success Modal
+// ==============================
+.modal-story {
+  .modal-content {
+    border-radius: v.$border-radius-xl;
+    border: none;
+    box-shadow: v.$shadow-xl;
+    overflow: hidden;
+  }
+ 
+  .modal-header {
+    @include m.gradient-primary;
+    color: white;
+    border: none;
+ 
+    .modal-title {
+      font-family: v.$font-display;
+    }
+ 
+    .btn-close {
+      filter: invert(1);
+    }
+  }
+ 
+  .modal-body {
+    padding: v.$space-8;
+    text-align: center;
+  }
+ 
+  .modal-footer {
+    border-top: 1px solid v.$border-color;
+    padding: v.$space-4 v.$space-6;
+  }
+}

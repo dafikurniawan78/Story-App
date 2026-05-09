@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+</head>
+<body>
+
+<!-- OFFCANVAS NAVIGATION -->
+<div class="offcanvas offcanvas-start offcanvas-story" tabindex="-1" id="offcanvasNav">
+  <div class="offcanvas-story__header offcanvas-header">
+    <h5 class="offcanvas-title offcanvas-story__title"><i class="bi bi-camera-reels-fill me-2"></i>StoryApp</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-story__body offcanvas-body d-flex flex-column">
+    <ul class="offcanvas-story__nav">
+      <li><a href="index.html"><i class="bi bi-house-door-fill"></i> Beranda</a></li>
+      <li><a href="add-story.html"><i class="bi bi-plus-circle-fill"></i> Tambah Story</a></li>
+      <li><a href="about.html" class="active"><i class="bi bi-people-fill"></i> Tentang Kami</a></li>
+    </ul>
+    <div class="offcanvas-story__divider"></div>
+    <div class="mt-auto offcanvas-story__footer">
+      <locale-picker theme="dark" class="mb-3 d-block"></locale-picker>
+      <p>StoryApp &copy; 2024</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="app-navbar">
+  <a class="app-navbar__brand" href="index.html">
+    <div class="app-navbar__brand-icon"><i class="bi bi-camera-reels-fill"></i></div>
+    <span class="app-navbar__brand-text">Story<span>App</span></span>
+  </a>
+  <div class="app-navbar__actions">
+    <button class="app-navbar__menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+      <i class="bi bi-list"></i> Menu
+    </button>
+    <locale-picker theme="light" class="d-none d-sm-inline-block me-2"></locale-picker>
+    <a class="app-navbar__add-btn" href="add-story.html">
+      <i class="bi bi-plus-lg"></i><span class="d-none d-sm-inline">Tambah Story</span>
+    </a>
+  </div>
+</nav>
+
+<div class="page-wrapper">
+
+  <!-- ABOUT HERO -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero__tag"><i class="bi bi-people-fill"></i> Tim Kami</div>
+      <h1 class="about-hero__title">Tentang StoryApp</h1>
+      <p class="about-hero__subtitle">
+        Kami adalah tim passionate developers yang percaya setiap orang memiliki cerita unik yang layak untuk dibagikan kepada dunia.
+      </p>
+    </div>
+  </section>
+
+  <!-- VALUES SECTION -->
+  <section class="about-values">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;">
+          Nilai &amp; <span style="color:#E8631A;">Misi Kami</span>
+        </h2>
+        <p class="text-muted mt-2">Apa yang mendorong kami setiap hari</p>
+      </div>
+      <!-- Bootstrap Grid System -->
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <div class="value-card">
+            <div class="value-card__icon"><i class="bi bi-heart-fill"></i></div>
+            <h5 class="value-card__title">Passion</h5>
+            <p class="value-card__desc">Setiap baris kode ditulis dengan penuh semangat dan kecintaan terhadap pengalaman pengguna.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="value-card">
+            <div class="value-card__icon"><i class="bi bi-lightning-fill"></i></div>
+            <h5 class="value-card__title">Inovasi</h5>
+            <p class="value-card__desc">Selalu mencari cara baru untuk membuat pengalaman berbagi cerita yang lebih baik.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="value-card">
+            <div class="value-card__icon"><i class="bi bi-shield-check-fill"></i></div>
+            <h5 class="value-card__title">Kepercayaan</h5>
+            <p class="value-card__desc">Data pengguna adalah tanggung jawab kami. Privasi dan keamanan jadi prioritas utama.</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="value-card">
+            <div class="value-card__icon"><i class="bi bi-globe-americas"></i></div>
+            <h5 class="value-card__title">Inklusif</h5>
+            <p class="value-card__desc">Dirancang untuk semua orang, tanpa memandang latar belakang atau kemampuan teknis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM SECTION -->
+  <section style="padding:4rem 0;background:#fff;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;">
+          Tim <span style="color:#E8631A;">Developer</span>
+        </h2>
+        <p class="text-muted mt-2">Orang-orang hebat di balik StoryApp</p>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6 col-lg-4">
+          <profile-card
+            name="Dafi Kurniawan Yusuf, S.Kom."
+            role="Lead Developer"
+            bio="Full-stack developer yang bersemangat tentang web performance dan UX design yang berpusat pada pengguna."
+            github="https://github.com"
+            email="dafi@storyapp.id"
+          ></profile-card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section style="padding:4rem 0;background:#F8F6F2;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Playfair Display',serif;">
+          Tech <span style="color:#E8631A;">Stack</span>
+        </h2>
+        <p class="text-muted mt-2">Teknologi yang kami gunakan membangun StoryApp</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <!-- Bootstrap: d-flex flex-wrap justify-content-center gap-3 -->
+          <div class="tech-stack justify-content-center">
+            <span class="tech-badge"><i class="bi bi-bootstrap-fill"></i> Bootstrap 5</span>
+            <span class="tech-badge"><i class="bi bi-fire"></i> Lit 3</span>
+            <span class="tech-badge"><i class="bi bi-filetype-scss"></i> Sass/SCSS</span>
+            <span class="tech-badge"><i class="bi bi-filetype-js"></i> JavaScript ES6+</span>
+            <span class="tech-badge"><i class="bi bi-filetype-html"></i> HTML5</span>
+            <span class="tech-badge"><i class="bi bi-box-seam"></i> Webpack 5</span>
+            <span class="tech-badge"><i class="bi bi-git"></i> Git</span>
+            <span class="tech-badge"><i class="bi bi-github"></i> GitHub</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section style="padding:5rem 0;background:#1A2E4A;">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:white;">
+        Siap Berbagi <span style="color:#F5C842;">Ceritamu?</span>
+      </h2>
+      <p class="mb-5" style="color:rgba(255,255,255,.6);max-width:500px;margin:0 auto 2rem;">
+        Bergabunglah bersama pengguna yang sudah membagikan momen spesial mereka di StoryApp.
+      </p>
+      <!-- Bootstrap: d-flex gap-3 justify-content-center -->
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="add-story.html" class="btn btn-lg rounded-pill px-5 text-white fw-semibold"
+          style="background:linear-gradient(135deg,#E8631A,#C4500E);">
+          <i class="bi bi-plus-circle-fill me-2"></i>Tambah Story Pertama
+        </a>
+        <a href="index.html" class="btn btn-lg rounded-pill px-5 fw-semibold"
+          style="background:rgba(255,255,255,.1);color:white;border:1.5px solid rgba(255,255,255,.25);">
+          <i class="bi bi-arrow-left me-2"></i>Lihat Semua Stories
+        </a>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Lit Component: app-footer -->
+<app-footer></app-footer>
+
+</body>
+</html>

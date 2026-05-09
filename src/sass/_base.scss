@@ -1,0 +1,50 @@
+@use 'variable' as v;
+@use 'mixins' as m;
+ 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ 
+html {
+  scroll-behavior: smooth;
+}
+ 
+body {
+  font-family: v.$font-body;
+  font-size: v.$font-size-base;
+  color: v.$text-dark;
+  background-color: v.$surface-alt;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+ 
+h1, h2, h3, h4, h5, h6 {
+  font-family: v.$font-display;
+  line-height: 1.2;
+  font-weight: 700;
+}
+ 
+a {
+  color: v.$primary;
+  text-decoration: none;
+ 
+  &:hover {
+    color: v.$primary-dark;
+  }
+}
+ 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+ 
+// Page wrapper offset for fixed navbar
+.page-wrapper {
+  padding-top: v.$navbar-height;
+  min-height: 100vh;
+}

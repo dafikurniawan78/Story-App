@@ -1,0 +1,117 @@
+@use 'variable' as v;
+ 
+// ==============================
+// Responsive Breakpoints
+// ==============================
+@mixin respond-to($bp) {
+  @if $bp == 'sm' {
+    @media (min-width: v.$breakpoint-sm) { @content; }
+  } @else if $bp == 'md' {
+    @media (min-width: v.$breakpoint-md) { @content; }
+  } @else if $bp == 'lg' {
+    @media (min-width: v.$breakpoint-lg) { @content; }
+  } @else if $bp == 'xl' {
+    @media (min-width: v.$breakpoint-xl) { @content; }
+  } @else if $bp == 'xxl' {
+    @media (min-width: v.$breakpoint-xxl) { @content; }
+  }
+}
+ 
+// ==============================
+// Flex Helpers
+// ==============================
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+// ==============================
+// Card Base
+// ==============================
+@mixin card-base {
+  background: v.$surface;
+  border-radius: v.$border-radius-lg;
+  box-shadow: v.$shadow;
+  overflow: hidden;
+  transition: transform v.$transition-base, box-shadow v.$transition-base;
+ 
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: v.$shadow-lg;
+  }
+}
+ 
+// ==============================
+// Text Clamp
+// ==============================
+@mixin text-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+ 
+// ==============================
+// Gradients
+// ==============================
+@mixin gradient-primary {
+  background: linear-gradient(135deg, v.$primary 0%, v.$primary-dark 100%);
+}
+ 
+@mixin gradient-hero {
+  background: linear-gradient(160deg, v.$secondary 0%, #020617 100%);
+}
+ 
+// ==============================
+// Button Base
+// ==============================
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$space-2;
+  padding: v.$space-3 v.$space-6;
+  border: none;
+  border-radius: v.$border-radius-pill;
+  font-family: v.$font-body;
+  font-weight: 600;
+  font-size: v.$font-size-sm;
+  cursor: pointer;
+  transition: all v.$transition-base;
+  text-decoration: none;
+ 
+  &:focus-visible {
+    outline: 3px solid v.$accent;
+    outline-offset: 2px;
+  }
+}
+ 
+// ==============================
+// Avatar
+// ==============================
+@mixin avatar($size: 40px) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  @include flex-center;
+  font-weight: 700;
+  font-size: calc(#{$size} * 0.4);
+  flex-shrink: 0;
+}
+ 
+// ==============================
+// Section Padding
+// ==============================
+@mixin section-padding {
+  padding: v.$space-16 0;
+ 
+  @include respond-to('md') {
+    padding: v.$space-12 0;
+  }
+}

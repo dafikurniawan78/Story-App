@@ -1,0 +1,181 @@
+@use 'variable' as v;
+@use 'mixins' as m;
+ 
+.about-hero {
+  @include m.gradient-hero;
+  padding: v.$space-16 0 v.$space-12;
+  color: white;
+  text-align: center;
+ 
+  &__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: v.$space-2;
+    background: rgba(v.$accent, 0.15);
+    border: 1px solid rgba(v.$accent, 0.3);
+    color: v.$accent;
+    padding: v.$space-1 v.$space-3;
+    border-radius: v.$border-radius-pill;
+    font-size: v.$font-size-xs;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: v.$space-4;
+  }
+ 
+  &__title {
+    font-family: v.$font-display;
+    font-size: v.$font-size-4xl;
+    margin-bottom: v.$space-4;
+ 
+    @include m.respond-to('md') {
+      font-size: v.$font-size-3xl;
+    }
+  }
+ 
+  &__subtitle {
+    font-size: v.$font-size-lg;
+    color: rgba(255, 255, 255, 0.6);
+    max-width: 580px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+}
+ 
+// ==============================
+// Profile Card (used by Lit component)
+// ==============================
+.profile-card {
+  @include m.card-base;
+  text-align: center;
+  border: 1.5px solid v.$border-color;
+  padding: v.$space-8 v.$space-6;
+  height: 100%;
+ 
+  &__avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    @include m.gradient-primary;
+    @include m.flex-center;
+    font-family: v.$font-display;
+    font-size: v.$font-size-3xl;
+    color: white;
+    margin: 0 auto v.$space-5;
+    box-shadow: 0 8px 24px rgba(v.$primary, 0.3);
+  }
+ 
+  &__name {
+    font-family: v.$font-display;
+    font-size: v.$font-size-xl;
+    color: v.$text-dark;
+    margin-bottom: v.$space-1;
+  }
+ 
+  &__role {
+    font-size: v.$font-size-xs;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: v.$primary;
+    margin-bottom: v.$space-4;
+  }
+ 
+  &__bio {
+    font-size: v.$font-size-sm;
+    color: v.$text-muted;
+    line-height: 1.7;
+    margin-bottom: v.$space-5;
+  }
+ 
+  &__socials {
+    @include m.flex-center;
+    gap: v.$space-3;
+    flex-wrap: wrap;
+  }
+ 
+  &__social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: v.$surface-alt;
+    @include m.flex-center;
+    color: v.$text-muted;
+    font-size: v.$font-size-sm;
+    transition: all v.$transition-base;
+    text-decoration: none;
+ 
+    &:hover {
+      background: v.$primary;
+      color: white;
+      transform: translateY(-2px);
+    }
+  }
+}
+ 
+// ==============================
+// Value Cards
+// ==============================
+.value-card {
+  @include m.card-base;
+  border: 1.5px solid v.$border-color;
+  padding: v.$space-6;
+  height: 100%;
+ 
+  &__icon {
+    width: 52px;
+    height: 52px;
+    @include m.gradient-primary;
+    border-radius: v.$border-radius;
+    @include m.flex-center;
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: v.$space-4;
+  }
+ 
+  &__title {
+    font-family: v.$font-display;
+    font-size: v.$font-size-lg;
+    color: v.$text-dark;
+    margin-bottom: v.$space-2;
+  }
+ 
+  &__desc {
+    font-size: v.$font-size-sm;
+    color: v.$text-muted;
+    line-height: 1.7;
+  }
+}
+ 
+// ==============================
+// Tech Badge
+// ==============================
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: v.$space-2;
+  padding: v.$space-2 v.$space-4;
+  background: v.$surface;
+  border: 1.5px solid v.$border-color;
+  border-radius: v.$border-radius-pill;
+  font-size: v.$font-size-xs;
+  font-weight: 600;
+  color: v.$text-dark;
+  transition: all v.$transition-base;
+ 
+  i {
+    color: v.$primary;
+  }
+ 
+  &:hover {
+    border-color: v.$primary;
+    color: v.$primary;
+    background: rgba(v.$primary, 0.04);
+  }
+}
+ 
+.tech-stack {
+  @include m.flex-center;
+  flex-wrap: wrap;
+  gap: v.$space-3;
+}

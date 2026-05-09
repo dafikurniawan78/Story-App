@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <title><%= htmlWebpackPlugin.options.title %> | Story App</title>
+</head>
+<body>
+ 
+<!-- OFFCANVAS NAVIGATION -->
+<div class="offcanvas offcanvas-start offcanvas-story" tabindex="-1" id="offcanvasNav">
+  <div class="offcanvas-story__header offcanvas-header">
+    <h5 class="offcanvas-title offcanvas-story__title"><i class="bi bi-camera-reels-fill me-2"></i>StoryApp</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-story__body offcanvas-body d-flex flex-column">
+    <ul class="offcanvas-story__nav">
+      <li><a href="index.html"><i class="bi bi-house-door-fill"></i> Beranda</a></li>
+      <li><a href="add-story.html" class="active"><i class="bi bi-plus-circle-fill"></i> Tambah Story</a></li>
+      <li><a href="about.html"><i class="bi bi-people-fill"></i> Tentang Kami</a></li>
+    </ul>
+    <div class="offcanvas-story__divider"></div>
+    <div class="mt-auto offcanvas-story__footer">
+      <locale-picker theme="dark" class="mb-3 d-block"></locale-picker>
+      <p>StoryApp &copy; 2024</p>
+    </div>
+  </div>
+</div>
+ 
+<!-- NAVBAR -->
+<nav class="app-navbar">
+  <a class="app-navbar__brand" href="index.html">
+    <div class="app-navbar__brand-icon"><i class="bi bi-camera-reels-fill"></i></div>
+    <span class="app-navbar__brand-text">Story<span>App</span></span>
+  </a>
+  <div class="app-navbar__actions">
+    <button class="app-navbar__menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+      <i class="bi bi-list"></i> Menu
+    </button>
+    <locale-picker theme="light" class="d-none d-sm-inline-block me-2"></locale-picker>
+    <a class="app-navbar__add-btn" href="index.html">
+      <i class="bi bi-house-fill"></i><span class="d-none d-sm-inline">Beranda</span>
+    </a>
+  </div>
+</nav>
+ 
+<div class="page-wrapper add-story-page">
+ 
+  <!-- HERO -->
+  <div class="add-story-hero">
+    <div class="container">
+      <div class="add-story-hero__breadcrumb">
+        <a href="index.html">Beranda</a><span>/</span><span>Tambah Story</span>
+      </div>
+      <h1 class="add-story-hero__title">Tambah <span>Story</span> Baru</h1>
+      <p class="add-story-hero__subtitle">Ceritakan pengalaman unikmu kepada dunia ✨</p>
+    </div>
+  </div>
+ 
+  <!-- FORM CONTAINER -->
+  <div class="container pb-5">
+    <div class="form-container">
+      <div class="story-form-card">
+        <div class="story-form-card__header">
+          <i class="bi bi-pencil-square"></i>
+          <div>
+            <h5>Formulir Cerita</h5>
+            <p>Isi semua field yang bertanda bintang (*)</p>
+          </div>
+        </div>
+        <div class="story-form-card__body">
+ 
+          <!-- Alert (Bootstrap #1) -->
+          <div class="alert alert-story alert-success d-flex align-items-start gap-3 mb-5" role="alert">
+            <i class="bi bi-lightbulb-fill fs-5 flex-shrink-0 mt-1"></i>
+            <div>
+              <strong>Tips menulis story yang menarik:</strong>
+              Ceritakan pengalamanmu dengan detail, sertakan foto yang relevan, dan gunakan bahasa yang natural.
+            </div>
+          </div>
+ 
+          <!-- Lit Component: add-story-form -->
+          <add-story-form></add-story-form>
+ 
+        </div>
+      </div>
+ 
+      <!-- Bootstrap Grid (info cards) -->
+      <div class="row g-3 mt-4">
+        <div class="col-sm-4">
+          <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 border h-100">
+            <div class="rounded-3 p-2 text-white flex-shrink-0" style="background:linear-gradient(135deg,#E8631A,#C4500E);">
+              <i class="bi bi-shield-check-fill fs-5"></i>
+            </div>
+            <div>
+              <div class="fw-semibold" style="font-size:.85rem;">Data Aman</div>
+              <div class="text-muted" style="font-size:.78rem;">Privasi terlindungi</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 border h-100">
+            <div class="rounded-3 p-2 text-white flex-shrink-0" style="background:linear-gradient(135deg,#E8631A,#C4500E);">
+              <i class="bi bi-lightning-fill fs-5"></i>
+            </div>
+            <div>
+              <div class="fw-semibold" style="font-size:.85rem;">Proses Cepat</div>
+              <div class="text-muted" style="font-size:.78rem;">Upload instan</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="d-flex align-items-center gap-3 p-3 bg-white rounded-3 border h-100">
+            <div class="rounded-3 p-2 text-white flex-shrink-0" style="background:linear-gradient(135deg,#E8631A,#C4500E);">
+              <i class="bi bi-globe-americas fs-5"></i>
+            </div>
+            <div>
+              <div class="fw-semibold" style="font-size:.85rem;">Jangkauan Luas</div>
+              <div class="text-muted" style="font-size:.78rem;">Dilihat semua orang</div>
+            </div>
+          </div>
+        </div>
+      </div>
+ 
+    </div>
+  </div>
+</div>
+ 
+<!-- SUCCESS MODAL (Bootstrap #2) -->
+<div class="modal fade modal-story" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"><i class="bi bi-check-circle-fill me-2"></i>Story Berhasil!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3" style="font-size:3.5rem;">🎉</div>
+        <h5 class="fw-bold mb-2">Story kamu telah dipublikasikan!</h5>
+        <p class="text-muted">Terima kasih sudah berbagi ceritamu. Story kamu sudah bisa dilihat semua orang di beranda.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="index.html" class="btn btn-outline-secondary btn-sm rounded-pill">
+          <i class="bi bi-house me-1"></i>Ke Beranda
+        </a>
+        <button type="button" class="btn btn-sm rounded-pill text-white"
+          style="background:linear-gradient(135deg,#E8631A,#C4500E);"
+          data-bs-dismiss="modal"
+          onclick="resetStoryForm()">
+          <i class="bi bi-plus-lg me-1"></i>Tambah Lagi
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- Lit Component: app-footer -->
+<app-footer></app-footer>
+ 
+</body>
+</html>

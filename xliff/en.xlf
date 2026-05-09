@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="en" source-language="id" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="s287a0972c6466abd">
+  <source>Deskripsi tidak boleh kosong.</source>
+</trans-unit>
+<trans-unit id="sa3dab4e5e56e7504">
+  <source>Deskripsi minimal 10 karakter.</source>
+</trans-unit>
+<trans-unit id="scb32ae6424e9f719">
+  <source>Deskripsi maksimal <x id="0" equiv-text="${this._MAX_CHARS}"/> karakter.</source>
+</trans-unit>
+<trans-unit id="sd9b925fec18ab36d">
+  <source>Foto wajib diunggah.</source>
+</trans-unit>
+<trans-unit id="s843e76c5b725b7de">
+  <source>File harus berupa gambar (JPG, PNG, WEBP).</source>
+</trans-unit>
+<trans-unit id="sfe8a924dbab8a70e">
+  <source>Ukuran file maksimal 5MB.</source>
+</trans-unit>
+<trans-unit id="s772ce5f935d58e37">
+  <source>Deskripsi</source>
+</trans-unit>
+<trans-unit id="sa6ea908a08e8f137">
+  <source>Ceritakan pengalamanmu yang menarik…</source>
+</trans-unit>
+<trans-unit id="sc40a92da22d7ebba">
+  <source>Minimal 10 karakter, maksimal <x id="0" equiv-text="${this._MAX_CHARS}"/> karakter.</source>
+</trans-unit>
+<trans-unit id="s07bef2850db005d7">
+  <source>Foto</source>
+</trans-unit>
+<trans-unit id="s5cf35959a0c7f427">
+  <source>Preview foto</source>
+</trans-unit>
+<trans-unit id="s41c5d0cf29918419">
+  <source>Klik atau seret foto ke sini</source>
+</trans-unit>
+<trans-unit id="sea846ea04ea394e9">
+  <source>JPG, PNG, WEBP • Maks. 5MB</source>
+</trans-unit>
+<trans-unit id="s1dafe06ef62da816">
+  <source>Kembali</source>
+</trans-unit>
+<trans-unit id="s742250c5525bf7ee">
+  <source>Mengunggah…</source>
+</trans-unit>
+<trans-unit id="s25446a82f23db23a">
+  <source>Publikasikan Story</source>
+</trans-unit>
+<trans-unit id="s5acc4f812d492972">
+  <source>Platform berbagi cerita dan momen berharga bersama teman dan keluarga. Abadikan setiap kenangan indah dalam sebuah story.</source>
+</trans-unit>
+<trans-unit id="s1042cd4209a90525">
+  <source>Navigasi</source>
+</trans-unit>
+<trans-unit id="sce43d420b27c5f7a">
+  <source>Beranda</source>
+</trans-unit>
+<trans-unit id="sfae357d460dcc835">
+  <source>Tambah Story</source>
+</trans-unit>
+<trans-unit id="sbc48bdf8ea977bca">
+  <source>Tentang Kami</source>
+</trans-unit>
+<trans-unit id="sb3f32662a9054673">
+  <source>Informasi</source>
+</trans-unit>
+<trans-unit id="sd044d18d65c8503d">
+  <source>Kebijakan Privasi</source>
+</trans-unit>
+<trans-unit id="se82adf9f537c58ae">
+  <source>Syarat &amp; Ketentuan</source>
+</trans-unit>
+<trans-unit id="s775fc3deab4cb2d3">
+  <source>Hubungi Kami</source>
+</trans-unit>
+<trans-unit id="s2b1152796101df65">
+  <source>Dibuat dengan</source>
+</trans-unit>
+<trans-unit id="s6eaad467ffc298ee">
+  <source>untuk berbagi cerita.</source>
+</trans-unit>
+<trans-unit id="s9bbdf0ee9305250b">
+  <source>Dibangun dengan Bootstrap 5, Lit 3 &amp; Sass</source>
+</trans-unit>
+<trans-unit id="sf706eaac61c7e1ad">
+  <source>Developer</source>
+</trans-unit>
+<trans-unit id="sdc17733069919af6">
+  <source>Team Member</source>
+</trans-unit>
+<trans-unit id="s5a90bbfefe68cde3">
+  <source>Member dari tim StoryApp yang berdedikasi tinggi.</source>
+</trans-unit>
+<trans-unit id="s0586ed892258f852">
+  <source>Story oleh <x id="0" equiv-text="${this.name}"/></source>
+</trans-unit>
+<trans-unit id="s78b96be2c8cf5c5d">
+  <source>Anonim</source>
+</trans-unit>
+<trans-unit id="se1769325234cbba1">
+  <source>Suka</source>
+</trans-unit>
+<trans-unit id="s3d63a9c195e20efc">
+  <source>Komentar</source>
+</trans-unit>
+<trans-unit id="sd832b5d181c66952">
+  <source>Bagikan</source>
+</trans-unit>
+<trans-unit id="sc16e06a7a8b30814">
+  <source>Baca</source>
+</trans-unit>
+<trans-unit id="se263bd7899f7aa02">
+  <source>Gagal memuat data.</source>
+</trans-unit>
+<trans-unit id="s18e225e13b5bcc1e">
+  <source>Tidak dapat memuat data. Pastikan file data/DATA.json tersedia.</source>
+</trans-unit>
+<trans-unit id="s0cbaae1728566642">
+  <source>Memuat...</source>
+</trans-unit>
+<trans-unit id="s04dafc7f8d39d091">
+  <source>Memuat stories…</source>
+</trans-unit>
+<trans-unit id="sf73e8803039ad57d">
+  <source>Oops!</source>
+</trans-unit>
+<trans-unit id="sa74714f715e28abd">
+  <source>Coba lagi</source>
+</trans-unit>
+<trans-unit id="s20880ac1e20bed0f">
+  <source>Tidak ada story ditemukan</source>
+</trans-unit>
+<trans-unit id="s9b8c2601c788a0a7">
+  <source>Coba ubah kata pencarian atau tambahkan story baru.</source>
+</trans-unit>
+</body>
+</file>
+</xliff>
