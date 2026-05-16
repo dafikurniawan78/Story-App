@@ -10,91 +10,11 @@
 </head>
 <body>
 
-<!-- OFFCANVAS NAVIGATION (Bootstrap #1) -->
-<div class="offcanvas offcanvas-start offcanvas-story" tabindex="-1" id="offcanvasNav" aria-labelledby="offcanvasNavLabel">
-  <div class="offcanvas-story__header offcanvas-header">
-    <h5 class="offcanvas-title offcanvas-story__title" id="offcanvasNavLabel">
-      <i class="bi bi-camera-reels-fill me-2"></i>StoryApp
-    </h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Tutup"></button>
-  </div>
-  <div class="offcanvas-story__body offcanvas-body d-flex flex-column">
-    <ul class="offcanvas-story__nav">
-      <li><a href="index.html" class="active"><i class="bi bi-house-door-fill"></i> Beranda</a></li>
-      <li><a href="add-story.html"><i class="bi bi-plus-circle-fill"></i> Tambah Story</a></li>
-      <li><a href="about.html"><i class="bi bi-people-fill"></i> Tentang Kami</a></li>
-    </ul>
-    <div class="offcanvas-story__divider"></div>
-    <ul class="offcanvas-story__nav">
-      <li><a href="#"><i class="bi bi-shield-lock-fill"></i> Kebijakan Privasi</a></li>
-      <li><a href="#"><i class="bi bi-question-circle-fill"></i> Bantuan</a></li>
-    </ul>
-    <div class="mt-auto offcanvas-story__footer">
-      <locale-picker theme="dark" class="mb-3 d-block"></locale-picker>
-      <p>StoryApp &copy; 2024</p>
-    </div>
-  </div>
-</div>
-
-<!-- NAVBAR -->
-<nav class="app-navbar">
-  <a class="app-navbar__brand" href="index.html">
-    <div class="app-navbar__brand-icon"><i class="bi bi-camera-reels-fill"></i></div>
-    <span class="app-navbar__brand-text">Story<span>App</span></span>
-  </a>
-  <div class="app-navbar__actions">
-    <button class="app-navbar__menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-      <i class="bi bi-list"></i> Menu
-    </button>
-    <locale-picker theme="light" class="d-none d-sm-inline-block me-2"></locale-picker>
-    <a class="app-navbar__add-btn" href="add-story.html">
-      <i class="bi bi-plus-lg"></i><span class="d-none d-sm-inline">Tambah Story</span>
-    </a>
-  </div>
-</nav>
+  <app-navbar active-page="index"></app-navbar>
 
 <div class="page-wrapper">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero__inner">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-7">
-            <div class="hero__tag"><i class="bi bi-stars"></i> Platform Cerita Digital</div>
-            <h1 class="hero__title">Bagikan <span>Momentmu</span><br />kepada Dunia</h1>
-            <p class="hero__subtitle">
-              StoryApp adalah tempat terbaik untuk mengabadikan dan berbagi cerita berharga bersama orang-orang terdekat. Setiap momen layak dikenang.
-            </p>
-            <div class="hero__cta">
-              <a href="add-story.html" class="hero__btn-primary"><i class="bi bi-plus-circle-fill"></i> Mulai Bercerita</a>
-              <a href="#stories" class="hero__btn-secondary"><i class="bi bi-arrow-down-circle"></i> Jelajahi Stories</a>
-            </div>
-            <div class="hero__stats">
-              <div class="hero__stat"><div class="hero__stat-number">9+</div><div class="hero__stat-label">Stories Aktif</div></div>
-              <div class="hero__stat"><div class="hero__stat-number">100%</div><div class="hero__stat-label">Gratis</div></div>
-              <div class="hero__stat"><div class="hero__stat-number">&#8734;</div><div class="hero__stat-label">Kenangan</div></div>
-            </div>
-          </div>
-          <div class="col-lg-5 d-none d-lg-flex flex-column gap-3">
-            <div class="hero-feature">
-              <div class="hero-feature__icon"><i class="bi bi-images"></i></div>
-              <div><div class="hero-feature__title">Foto Berkualitas</div><div class="hero-feature__desc">Upload foto hingga 5MB</div></div>
-              <span class="badge rounded-pill ms-auto" style="background:#F5C842;color:#1A2E4A;">Baru</span>
-            </div>
-            <div class="hero-feature">
-              <div class="hero-feature__icon"><i class="bi bi-people-fill"></i></div>
-              <div><div class="hero-feature__title">Komunitas Aktif</div><div class="hero-feature__desc">Terhubung dengan sesama</div></div>
-            </div>
-            <div class="hero-feature">
-              <div class="hero-feature__icon"><i class="bi bi-shield-check-fill"></i></div>
-              <div><div class="hero-feature__title">Privasi Terjaga</div><div class="hero-feature__desc">Data Anda aman bersama kami</div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <hero-section></hero-section>
 
   <!-- STORIES SECTION -->
   <section class="stories-section" id="stories">

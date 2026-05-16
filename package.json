@@ -13,14 +13,20 @@
   "devDependencies": {
     "@babel/core": "^7.20.2",
     "@babel/preset-env": "^7.20.2",
+    "@eslint/js": "^10.0.1",
     "@lit/localize-tools": "^0.8.1",
     "autoprefixer": "^10.4.13",
     "babel-loader": "^9.1.0",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.2",
+    "eslint": "^10.3.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-lit": "^2.2.1",
+    "globals": "^17.6.0",
     "html-webpack-plugin": "^5.5.0",
     "postcss-loader": "^7.0.1",
+    "prettier": "^3.8.3",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
@@ -32,6 +38,7 @@
   "dependencies": {
     "@lit/localize": "^0.12.2",
     "@popperjs/core": "^2.11.6",
+    "axios": "^1.16.0",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.11.3",
     "lit": "^3.1.0"

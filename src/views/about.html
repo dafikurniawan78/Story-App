@@ -10,52 +10,17 @@
 </head>
 <body>
 
-<!-- OFFCANVAS NAVIGATION -->
-<div class="offcanvas offcanvas-start offcanvas-story" tabindex="-1" id="offcanvasNav">
-  <div class="offcanvas-story__header offcanvas-header">
-    <h5 class="offcanvas-title offcanvas-story__title"><i class="bi bi-camera-reels-fill me-2"></i>StoryApp</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-  </div>
-  <div class="offcanvas-story__body offcanvas-body d-flex flex-column">
-    <ul class="offcanvas-story__nav">
-      <li><a href="index.html"><i class="bi bi-house-door-fill"></i> Beranda</a></li>
-      <li><a href="add-story.html"><i class="bi bi-plus-circle-fill"></i> Tambah Story</a></li>
-      <li><a href="about.html" class="active"><i class="bi bi-people-fill"></i> Tentang Kami</a></li>
-    </ul>
-    <div class="offcanvas-story__divider"></div>
-    <div class="mt-auto offcanvas-story__footer">
-      <locale-picker theme="dark" class="mb-3 d-block"></locale-picker>
-      <p>StoryApp &copy; 2024</p>
-    </div>
-  </div>
-</div>
-
-<!-- NAVBAR -->
-<nav class="app-navbar">
-  <a class="app-navbar__brand" href="index.html">
-    <div class="app-navbar__brand-icon"><i class="bi bi-camera-reels-fill"></i></div>
-    <span class="app-navbar__brand-text">Story<span>App</span></span>
-  </a>
-  <div class="app-navbar__actions">
-    <button class="app-navbar__menu-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
-      <i class="bi bi-list"></i> Menu
-    </button>
-    <locale-picker theme="light" class="d-none d-sm-inline-block me-2"></locale-picker>
-    <a class="app-navbar__add-btn" href="add-story.html">
-      <i class="bi bi-plus-lg"></i><span class="d-none d-sm-inline">Tambah Story</span>
-    </a>
-  </div>
-</nav>
+  <app-navbar active-page="about"></app-navbar>
 
 <div class="page-wrapper">
 
   <!-- ABOUT HERO -->
   <section class="about-hero">
     <div class="container">
-      <div class="about-hero__tag"><i class="bi bi-people-fill"></i> Tim Kami</div>
+      <div class="about-hero__tag"><i class="bi bi-person-badge-fill"></i> Profil Developer</div>
       <h1 class="about-hero__title">Tentang StoryApp</h1>
       <p class="about-hero__subtitle">
-        Kami adalah tim passionate developers yang percaya setiap orang memiliki cerita unik yang layak untuk dibagikan kepada dunia.
+        Saya adalah seorang passionate developer yang percaya setiap orang memiliki cerita unik yang layak untuk dibagikan kepada dunia.
       </p>
     </div>
   </section>
@@ -65,9 +30,9 @@
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;">
-          Nilai &amp; <span style="color:#E8631A;">Misi Kami</span>
+          Nilai &amp; <span style="color:#E8631A;">Misi Saya</span>
         </h2>
-        <p class="text-muted mt-2">Apa yang mendorong kami setiap hari</p>
+        <p class="text-muted mt-2">Apa yang mendorong saya setiap hari</p>
       </div>
       <!-- Bootstrap Grid System -->
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
@@ -89,7 +54,7 @@
           <div class="value-card">
             <div class="value-card__icon"><i class="bi bi-shield-check-fill"></i></div>
             <h5 class="value-card__title">Kepercayaan</h5>
-            <p class="value-card__desc">Data pengguna adalah tanggung jawab kami. Privasi dan keamanan jadi prioritas utama.</p>
+            <p class="value-card__desc">Data pengguna adalah tanggung jawab saya. Privasi dan keamanan jadi prioritas utama.</p>
           </div>
         </div>
         <div class="col">
@@ -108,9 +73,9 @@
     <div class="container">
       <div class="text-center mb-5">
         <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;">
-          Tim <span style="color:#E8631A;">Developer</span>
+          <span style="color:#E8631A;">Developer</span>
         </h2>
-        <p class="text-muted mt-2">Orang-orang hebat di balik StoryApp</p>
+        <p class="text-muted mt-2">Sosok hebat di balik StoryApp</p>
       </div>
       <div class="row justify-content-center g-4">
         <div class="col-md-6 col-lg-4">
@@ -120,6 +85,7 @@
             bio="Full-stack developer yang bersemangat tentang web performance dan UX design yang berpusat pada pengguna."
             github="https://github.com"
             email="dafi@storyapp.id"
+            image-url="images/Dafi_Foto.png"
           ></profile-card>
         </div>
       </div>
@@ -133,7 +99,7 @@
         <h2 class="fw-bold" style="font-family:'Playfair Display',serif;">
           Tech <span style="color:#E8631A;">Stack</span>
         </h2>
-        <p class="text-muted mt-2">Teknologi yang kami gunakan membangun StoryApp</p>
+        <p class="text-muted mt-2">Teknologi yang saya gunakan membangun StoryApp</p>
       </div>
       <div class="row justify-content-center">
         <div class="col-lg-8">

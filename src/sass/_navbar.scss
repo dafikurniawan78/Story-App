@@ -11,10 +11,20 @@
   right: 0;
   z-index: 1050;
   height: v.$navbar-height;
-  background: v.$secondary;
+  background: rgba(v.$secondary, 0.8);
+  backdrop-filter: blur(10px);
   @include m.flex-between;
   padding: 0 v.$space-6;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &.scrolled {
+    background: rgba(v.$secondary, 0.95);
+    height: calc(v.$navbar-height - 10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid rgba(v.$primary, 0.2);
+  }
  
   &__brand {
     @include m.flex-center;
@@ -29,6 +39,7 @@
       @include m.flex-center;
       color: white;
       font-size: 1.2rem;
+      box-shadow: 0 0 15px rgba(v.$primary, 0.4);
     }
  
     &-text {
@@ -115,22 +126,61 @@
       align-items: center;
       gap: v.$space-3;
       padding: v.$space-3 v.$space-4;
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.6);
       border-radius: v.$border-radius;
       font-weight: 500;
-      transition: all v.$transition-base;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       text-decoration: none;
- 
+      position: relative;
+      overflow: hidden;
+
       i {
         width: 20px;
-        color: v.$primary-light;
+        color: rgba(255, 255, 255, 0.4);
+        transition: color 0.3s;
       }
- 
-      &:hover,
-      &.active {
-        background: rgba(255, 255, 255, 0.08);
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: v.$primary;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:hover {
         color: white;
+        background: rgba(255, 255, 255, 0.05);
         padding-left: v.$space-5;
+
+        i {
+          color: v.$primary;
+        }
+
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+
+      &.active {
+        background: rgba(v.$primary, 0.1);
+        color: v.$primary-light;
+        font-weight: 700;
+
+        i {
+          color: v.$primary;
+        }
+
+        &::after {
+          transform: scaleX(1);
+          background: v.$primary;
+        }
       }
     }
   }
@@ -148,3 +198,98 @@
     margin-top: auto;
   }
 }
+
+// ==============================
+// Custom Locale Picker (Light DOM)
+// ==============================
+.locale-picker-custom {
+  position: relative;
+  display: inline-block;
+  font-family: v.$font-body;
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    gap: v.$space-2;
+    padding: 8px 18px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: v.$border-radius-pill;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    user-select: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.25);
+      border-color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .arrow {
+      font-size: 0.7rem;
+      transition: transform 0.3s;
+      &.open { transform: rotate(180deg); }
+    }
+  }
+
+  &.light &__trigger {
+    background: white;
+    color: v.$secondary;
+    border-color: #dee2e6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: white;
+    border-radius: v.$border-radius;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    overflow: hidden;
+    min-width: 160px;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0,0,0,0.05);
+
+    &.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: v.$space-3;
+    padding: 10px 16px;
+    color: v.$secondary;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.9rem;
+
+    &:hover {
+      background: rgba(v.$primary, 0.05);
+      color: v.$primary;
+    }
+
+    &.active {
+      background: rgba(v.$primary, 0.1);
+      color: v.$primary;
+      font-weight: 700;
+    }
+
+    .flag {
+      font-size: 1.1rem;
+    }
+  }
+}

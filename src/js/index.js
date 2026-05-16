@@ -6,16 +6,38 @@ import './components/story-card.js';
 import './components/story-list.js';
 import './components/add-story-form.js';
 import './components/app-footer.js';
-import './components/profil-card.js';
+import './components/app-navbar.js';
+import './components/hero-section.js';
+import './components/profile-card.js';
 import './components/locale-picker.js';
+import './components/login-form.js';
+import './components/register-form.js';
+import { Auth } from './utils/auth';
+
+// ==============================
+// Route Protection
+// ==============================
+const path = window.location.pathname;
+if (path.includes('login.html') || path.includes('register.html')) {
+  Auth.redirectIfAuthenticated();
+} else {
+  Auth.requireLogin();
+}
  
+// ==============================
+// Logout Global Handler
+// ==============================
+window.logout = () => {
+  Auth.clearToken();
+  window.location.replace('/login.html');
+};
+
 // ==============================
 // Show welcome toast on dashboard
 // ==============================
 document.addEventListener('DOMContentLoaded', () => {
   const toastEl = document.getElementById('liveToast');
   if (toastEl) {
-    // Bootstrap tersedia via bundle setelah import 'bootstrap'
     const { Toast } = window.bootstrap || {};
     if (Toast) {
       new Toast(toastEl, { delay: 3500 }).show();

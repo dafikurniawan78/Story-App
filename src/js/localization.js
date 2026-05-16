@@ -13,7 +13,19 @@ const localizedTemplates = new Map([
 export const { getLocale, setLocale } = configureLocalization({
   sourceLocale,
   targetLocales,
-  loadLocale: (locale) => {
-    return Promise.resolve(localizedTemplates.get(locale));
+  loadLocale: async (locale) => {
+    return localizedTemplates.get(locale);
   },
 });
+
+// Fungsi pembungkus untuk menyimpan ke localStorage
+export const changeLocale = async (newLocale) => {
+  await setLocale(newLocale);
+  localStorage.setItem('locale', newLocale);
+};
+
+// Inisialisasi bahasa dari localStorage saat pertama kali dimuat
+const savedLocale = localStorage.getItem('locale');
+if (savedLocale && savedLocale !== getLocale()) {
+  setLocale(savedLocale);
+}

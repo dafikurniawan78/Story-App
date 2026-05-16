@@ -1,93 +1,86 @@
-import { LitElement, html, css } from 'lit';
+import { LitElement, html } from 'lit';
 import { allLocales } from '../generated/locale-codes.js';
-import { getLocale, setLocale } from '../localization.js';
+import { getLocale, changeLocale } from '../localization.js';
 
 class LocalePicker extends LitElement {
   static properties = {
-    _currentLocale: { type: String, state: true }
+    _currentLocale: { type: String, state: true },
+    _open: { type: Boolean, state: true },
+    theme: { type: String, reflect: true }
   };
 
-  static styles = css`
-    :host {
-      display: inline-block;
-    }
-    
-    .locale-select {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #333;
-      padding: 0.375rem 2rem 0.375rem 0.75rem;
-      font-size: 0.875rem;
-      border-radius: 50rem;
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23333' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 0.75rem center;
-      background-size: 16px 12px;
-      cursor: pointer;
-      font-family: inherit;
-    }
-
-    /* Style for light background contexts */
-    :host([theme="light"]) .locale-select {
-      background-color: white;
-      color: #333;
-      border-color: #dee2e6;
-    }
-
-    /* Style for dark background contexts (like navbar/footer) */
-    :host([theme="dark"]) .locale-select {
-      background-color: rgba(255, 255, 255, 0.1);
-      color: white;
-      border-color: rgba(255, 255, 255, 0.3);
-      background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3E%3C/svg%3E");
-    }
-    
-    .locale-select:focus {
-      outline: none;
-      box-shadow: 0 0 0 0.25rem rgba(232, 99, 26, 0.25);
-      border-color: #E8631A;
-    }
-    
-    .locale-select option {
-      color: #333;
-      background: white;
-    }
-  `;
+  createRenderRoot() {
+    return this;
+  }
 
   constructor() {
     super();
     this._currentLocale = getLocale();
+    this._open = false;
+    this.theme = 'dark';
+    this._closeMenu = this._closeMenu.bind(this);
   }
 
-  _localeChanged(e) {
-    const newLocale = e.target.value;
-    if (newLocale !== this._currentLocale) {
-      this._currentLocale = newLocale;
-      setLocale(newLocale);
+  connectedCallback() {
+    super.connectedCallback();
+    window.addEventListener('click', this._closeMenu);
+  }
+
+  disconnectedCallback() {
+    window.removeEventListener('click', this._closeMenu);
+    super.disconnectedCallback();
+  }
+
+  _closeMenu() {
+    this._open = false;
+  }
+
+  _toggleMenu(e) {
+    e.stopPropagation();
+    this._open = !this._open;
+  }
+
+  _selectLocale(locale) {
+    if (locale !== this._currentLocale) {
+      this._currentLocale = locale;
+      changeLocale(locale);
     }
+    this._open = false;
   }
 
-  _getLocaleName(code) {
-    const names = {
-      'id': '🇮🇩 Indonesia',
-      'en': '🇺🇸 English',
-      'es': '🇪🇸 Español'
+  _getLocaleData(code) {
+    const data = {
+      'id': { name: 'Indonesia', flag: '🇮🇩' },
+      'en': { name: 'English', flag: '🇺🇸' },
+      'es': { name: 'Español', flag: '🇪🇸' }
     };
-    return names[code] || code;
+    return data[code] || { name: code, flag: '🌐' };
   }
 
   render() {
+    const current = this._getLocaleData(this._currentLocale);
+
     return html`
-      <select class="locale-select" @change=${this._localeChanged} .value=${this._currentLocale}>
-        ${allLocales.map(
-          (locale) => html`
-            <option value=${locale}>
-              ${this._getLocaleName(locale)}
-            </option>
-          `
-        )}
-      </select>
+      <div class="locale-picker-custom ${this.theme}">
+        <div class="locale-picker-custom__trigger" @click=${this._toggleMenu}>
+          <span class="flag">${current.flag}</span>
+          <span class="name">${current.name}</span>
+          <span class="arrow ${this._open ? 'open' : ''}"><i class="bi bi-chevron-down"></i></span>
+        </div>
+        
+        <div class="locale-picker-custom__menu ${this._open ? 'show' : ''}">
+          ${allLocales.map(locale => {
+            const item = this._getLocaleData(locale);
+            return html`
+              <div class="locale-picker-custom__item ${locale === this._currentLocale ? 'active' : ''}" 
+                   @click=${() => this._selectLocale(locale)}>
+                <span class="flag">${item.flag}</span>
+                <span>${item.name}</span>
+              </div>
+            `;
+          })}
+        </div>
+      </div>
     `;
   }
 }

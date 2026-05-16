@@ -1,5 +1,6 @@
 import { LitElement, html } from 'lit';
-import { msg, str } from '@lit/localize';
+import { msg } from '@lit/localize';
+import api from '../network/api';
 import './story-card.js';
  
 class StoryList extends LitElement {
@@ -30,16 +31,13 @@ class StoryList extends LitElement {
  
   async _fetchStories() {
     this.loading = true;
+    this.error = '';
     try {
-      const res  = await fetch('data/DATA.json');
-      const json = await res.json();
-      if (!json.error && Array.isArray(json.listStory)) {
-        this.stories = json.listStory;
-      } else {
-        this.error = json.message || msg('Gagal memuat data.');
-      }
+      const response = await api.get('/stories');
+      const { listStory } = response.data;
+      this.stories = listStory || [];
     } catch (e) {
-      this.error = msg('Tidak dapat memuat data. Pastikan file data/DATA.json tersedia.');
+      this.error = e.response?.data?.message || msg('Gagal memuat data dari server. Pastikan koneksi internet stabil.');
     } finally {
       this.loading = false;
     }

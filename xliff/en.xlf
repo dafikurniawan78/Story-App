@@ -4,138 +4,307 @@
 <body>
 <trans-unit id="s287a0972c6466abd">
   <source>Deskripsi tidak boleh kosong.</source>
+  <target>Description cannot be empty.</target>
 </trans-unit>
 <trans-unit id="sa3dab4e5e56e7504">
   <source>Deskripsi minimal 10 karakter.</source>
+  <target>Description min 10 characters.</target>
 </trans-unit>
 <trans-unit id="scb32ae6424e9f719">
   <source>Deskripsi maksimal <x id="0" equiv-text="${this._MAX_CHARS}"/> karakter.</source>
+  <target>Description max <x id="0" equiv-text="${this._MAX_CHARS}"/> characters.</target>
 </trans-unit>
 <trans-unit id="sd9b925fec18ab36d">
   <source>Foto wajib diunggah.</source>
+  <target>Photo is required.</target>
 </trans-unit>
 <trans-unit id="s843e76c5b725b7de">
   <source>File harus berupa gambar (JPG, PNG, WEBP).</source>
+  <target>File must be an image (JPG, PNG, WEBP).</target>
 </trans-unit>
 <trans-unit id="sfe8a924dbab8a70e">
   <source>Ukuran file maksimal 5MB.</source>
+  <target>Max file size 5MB.</target>
 </trans-unit>
 <trans-unit id="s772ce5f935d58e37">
   <source>Deskripsi</source>
+  <target>Description</target>
 </trans-unit>
 <trans-unit id="sa6ea908a08e8f137">
   <source>Ceritakan pengalamanmu yang menarik…</source>
+  <target>Tell your interesting experience…</target>
 </trans-unit>
 <trans-unit id="sc40a92da22d7ebba">
   <source>Minimal 10 karakter, maksimal <x id="0" equiv-text="${this._MAX_CHARS}"/> karakter.</source>
+  <target>Min 10 characters, max <x id="0" equiv-text="${this._MAX_CHARS}"/> characters.</target>
 </trans-unit>
 <trans-unit id="s07bef2850db005d7">
   <source>Foto</source>
+  <target>Photo</target>
 </trans-unit>
 <trans-unit id="s5cf35959a0c7f427">
   <source>Preview foto</source>
+  <target>Photo preview</target>
 </trans-unit>
 <trans-unit id="s41c5d0cf29918419">
   <source>Klik atau seret foto ke sini</source>
+  <target>Click or drag photo here</target>
 </trans-unit>
 <trans-unit id="sea846ea04ea394e9">
   <source>JPG, PNG, WEBP • Maks. 5MB</source>
+  <target>JPG, PNG, WEBP • Max 5MB</target>
 </trans-unit>
 <trans-unit id="s1dafe06ef62da816">
   <source>Kembali</source>
+  <target>Back</target>
 </trans-unit>
 <trans-unit id="s742250c5525bf7ee">
   <source>Mengunggah…</source>
+  <target>Uploading…</target>
 </trans-unit>
 <trans-unit id="s25446a82f23db23a">
   <source>Publikasikan Story</source>
+  <target>Publish Story</target>
 </trans-unit>
 <trans-unit id="s5acc4f812d492972">
   <source>Platform berbagi cerita dan momen berharga bersama teman dan keluarga. Abadikan setiap kenangan indah dalam sebuah story.</source>
+  <target>A platform to share stories and precious moments with friends and family. Capture every beautiful memory in a story.</target>
 </trans-unit>
 <trans-unit id="s1042cd4209a90525">
   <source>Navigasi</source>
+  <target>Navigation</target>
 </trans-unit>
 <trans-unit id="sce43d420b27c5f7a">
   <source>Beranda</source>
+  <target>Home</target>
 </trans-unit>
 <trans-unit id="sfae357d460dcc835">
   <source>Tambah Story</source>
+  <target>Add Story</target>
 </trans-unit>
 <trans-unit id="sbc48bdf8ea977bca">
   <source>Tentang Kami</source>
+  <target>About Us</target>
 </trans-unit>
 <trans-unit id="sb3f32662a9054673">
   <source>Informasi</source>
+  <target>Information</target>
 </trans-unit>
 <trans-unit id="sd044d18d65c8503d">
   <source>Kebijakan Privasi</source>
+  <target>Privacy Policy</target>
 </trans-unit>
 <trans-unit id="se82adf9f537c58ae">
   <source>Syarat &amp; Ketentuan</source>
+  <target>Terms &amp; Conditions</target>
 </trans-unit>
 <trans-unit id="s775fc3deab4cb2d3">
   <source>Hubungi Kami</source>
+  <target>Contact Us</target>
 </trans-unit>
 <trans-unit id="s2b1152796101df65">
   <source>Dibuat dengan</source>
+  <target>Made with</target>
 </trans-unit>
 <trans-unit id="s6eaad467ffc298ee">
   <source>untuk berbagi cerita.</source>
+  <target>to share stories.</target>
 </trans-unit>
 <trans-unit id="s9bbdf0ee9305250b">
   <source>Dibangun dengan Bootstrap 5, Lit 3 &amp; Sass</source>
-</trans-unit>
-<trans-unit id="sf706eaac61c7e1ad">
-  <source>Developer</source>
-</trans-unit>
-<trans-unit id="sdc17733069919af6">
-  <source>Team Member</source>
-</trans-unit>
-<trans-unit id="s5a90bbfefe68cde3">
-  <source>Member dari tim StoryApp yang berdedikasi tinggi.</source>
+  <target>Built with Bootstrap 5, Lit 3 &amp; Sass</target>
 </trans-unit>
 <trans-unit id="s0586ed892258f852">
   <source>Story oleh <x id="0" equiv-text="${this.name}"/></source>
+  <target>Story by <x id="0" equiv-text="${this.name}"/></target>
 </trans-unit>
 <trans-unit id="s78b96be2c8cf5c5d">
   <source>Anonim</source>
+  <target>Anonymous</target>
 </trans-unit>
 <trans-unit id="se1769325234cbba1">
   <source>Suka</source>
+  <target>Like</target>
 </trans-unit>
 <trans-unit id="s3d63a9c195e20efc">
   <source>Komentar</source>
+  <target>Comment</target>
 </trans-unit>
 <trans-unit id="sd832b5d181c66952">
   <source>Bagikan</source>
+  <target>Share</target>
 </trans-unit>
 <trans-unit id="sc16e06a7a8b30814">
   <source>Baca</source>
-</trans-unit>
-<trans-unit id="se263bd7899f7aa02">
-  <source>Gagal memuat data.</source>
-</trans-unit>
-<trans-unit id="s18e225e13b5bcc1e">
-  <source>Tidak dapat memuat data. Pastikan file data/DATA.json tersedia.</source>
+  <target>Read</target>
 </trans-unit>
 <trans-unit id="s0cbaae1728566642">
   <source>Memuat...</source>
+  <target>Loading...</target>
 </trans-unit>
 <trans-unit id="s04dafc7f8d39d091">
   <source>Memuat stories…</source>
+  <target>Loading stories…</target>
 </trans-unit>
 <trans-unit id="sf73e8803039ad57d">
   <source>Oops!</source>
+  <target>Oops!</target>
 </trans-unit>
 <trans-unit id="sa74714f715e28abd">
   <source>Coba lagi</source>
+  <target>Try again</target>
 </trans-unit>
 <trans-unit id="s20880ac1e20bed0f">
   <source>Tidak ada story ditemukan</source>
+  <target>No story found</target>
 </trans-unit>
 <trans-unit id="s9b8c2601c788a0a7">
   <source>Coba ubah kata pencarian atau tambahkan story baru.</source>
+  <target>Try changing search terms or add a new story.</target>
+</trans-unit>
+<trans-unit id="sce587fbecb82566b">
+  <source>Gagal mengunggah story. Pastikan file gambar valid dan ukuran max 1MB.</source>
+  <target>Failed to upload story. Make sure image file is valid and max size 1MB.</target>
+</trans-unit>
+<trans-unit id="s7c589da18f8a1330">
+  <source>Password minimal 8 karakter</source>
+  <target>Password must be at least 8 characters</target>
+</trans-unit>
+<trans-unit id="s53d2b724b5dcc88c">
+  <source>Gagal melakukan login. Silakan coba lagi.</source>
+  <target>Login failed. Please try again.</target>
+</trans-unit>
+<trans-unit id="sd1f44f1a8bc20e67">
+  <source>Email</source>
+  <target>Email</target>
+</trans-unit>
+<trans-unit id="sf6e1665c7022a1f8">
+  <source>Password</source>
+  <target>Password</target>
+</trans-unit>
+<trans-unit id="scbbb3ea9096bf615">
+  <source>Minimal 8 karakter</source>
+  <target>Min 8 characters</target>
+</trans-unit>
+<trans-unit id="s965c8b9b7067be50">
+  <source>Memproses...</source>
+  <target>Processing...</target>
+</trans-unit>
+<trans-unit id="s45dab30b4d2d3c14">
+  <source>Masuk</source>
+  <target>Login</target>
+</trans-unit>
+<trans-unit id="s7ae24e2336894d23">
+  <source>Belum punya akun?</source>
+  <target>Don't have an account?</target>
+</trans-unit>
+<trans-unit id="s9bf239e9713bdc0b">
+  <source>Daftar di sini</source>
+  <target>Register here</target>
+</trans-unit>
+<trans-unit id="sa80fde540c0bdc72">
+  <source>Akun berhasil dibuat! Silakan login.</source>
+  <target>Account created successfully! Please login.</target>
+</trans-unit>
+<trans-unit id="s79742ef470e72018">
+  <source>Gagal melakukan pendaftaran. Email mungkin sudah digunakan.</source>
+  <target>Registration failed. Email might be already in use.</target>
+</trans-unit>
+<trans-unit id="sd8c69511c9f3d14e">
+  <source>Nama Lengkap</source>
+  <target>Full Name</target>
+</trans-unit>
+<trans-unit id="scd1a560cc68236da">
+  <source>Nama Anda</source>
+  <target>Your Name</target>
+</trans-unit>
+<trans-unit id="sd93ff51dd0da1dbf">
+  <source>Daftar</source>
+  <target>Register</target>
+</trans-unit>
+<trans-unit id="s3cf0c263cd2dcba3">
+  <source>Sudah punya akun?</source>
+  <target>Already have an account?</target>
+</trans-unit>
+<trans-unit id="s1564f610a1c33fe8">
+  <source>Masuk di sini</source>
+  <target>Login here</target>
+</trans-unit>
+<trans-unit id="sef1397a35894b5ba">
+  <source>Fitur <x id="0" equiv-text="${feature}"/> akan segera hadir!</source>
+  <target>Feature <x id="0" equiv-text="${feature}"/> is coming soon!</target>
+</trans-unit>
+<trans-unit id="sbe960946699387a4">
+  <source>Gagal memuat data dari server. Pastikan koneksi internet stabil.</source>
+  <target>Failed to load data from server. Make sure internet connection is stable.</target>
+</trans-unit>
+<trans-unit id="s0f575751697a24d2">
+  <source>Bantuan</source>
+  <target>Help</target>
+</trans-unit>
+<trans-unit id="s229fb4df9ecf3ed1">
+  <source>Keluar</source>
+  <target>Logout</target>
+</trans-unit>
+<trans-unit id="s6d8c02aee480af7a">
+  <source>Menu</source>
+  <target>Menu</target>
+</trans-unit>
+<trans-unit id="s62093688a0d37f38">
+  <source>Platform Cerita Digital</source>
+  <target>Digital Story Platform</target>
+</trans-unit>
+<trans-unit id="s6464c1c17ee122c4">
+  <source>StoryApp adalah tempat terbaik untuk mengabadikan dan berbagi cerita berharga bersama orang-orang terdekat. Setiap momen layak dikenang.</source>
+  <target>StoryApp is the best place to capture and share precious stories with those closest to you. Every moment is worth remembering.</target>
+</trans-unit>
+<trans-unit id="sc3018a07cabf58f4">
+  <source>Mulai Bercerita</source>
+  <target>Start Sharing</target>
+</trans-unit>
+<trans-unit id="s9e15a6ce4aa0c808">
+  <source>Jelajahi Stories</source>
+  <target>Explore Stories</target>
+</trans-unit>
+<trans-unit id="s100ba88104dac49d">
+  <source>Stories Aktif</source>
+  <target>Active Stories</target>
+</trans-unit>
+<trans-unit id="sa0b3a985c21f61c9">
+  <source>Gratis</source>
+  <target>Free</target>
+</trans-unit>
+<trans-unit id="sfc5673d7b8bf2b7c">
+  <source>Kenangan</source>
+  <target>Memories</target>
+</trans-unit>
+<trans-unit id="s92535c1576f502f2">
+  <source>Foto Berkualitas</source>
+  <target>Quality Photos</target>
+</trans-unit>
+<trans-unit id="s2c8260436c037e62">
+  <source>Upload foto hingga 5MB</source>
+  <target>Upload photos up to 5MB</target>
+</trans-unit>
+<trans-unit id="sc1a0f6a7a8de467d">
+  <source>Baru</source>
+  <target>New</target>
+</trans-unit>
+<trans-unit id="s0c8eaf87554b2653">
+  <source>Komunitas Aktif</source>
+  <target>Active Community</target>
+</trans-unit>
+<trans-unit id="s24b2b43f3d7b86ae">
+  <source>Terhubung dengan sesama</source>
+  <target>Connect with others</target>
+</trans-unit>
+<trans-unit id="s27927f30dc301eed">
+  <source>Privasi Terjaga</source>
+  <target>Privacy Protected</target>
+</trans-unit>
+<trans-unit id="s3bc6869f9fe9531f">
+  <source>Data Anda aman bersama kami</source>
+  <target>Your data is safe with us</target>
 </trans-unit>
 </body>
 </file>

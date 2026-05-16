@@ -5,6 +5,7 @@
 @use 'add-story';
 @use 'about';
 @use 'footer';
+@use 'auth';
 
 // Kustomisasi Bootstrap (Saran 1 - 5 komponen)
 $primary: v.$primary;

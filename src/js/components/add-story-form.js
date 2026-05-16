@@ -1,6 +1,6 @@
 import { LitElement, html } from 'lit';
 import { msg, str } from '@lit/localize';
-import { bootstrap } from 'bootstrap';
+import api from '../network/api';
 
 class AddStoryForm extends LitElement {
   static properties = {
@@ -100,13 +100,29 @@ class AddStoryForm extends LitElement {
       return;
     }
     this.submitting = true;
-    // Simulasi submit untuk aplikasi statis
-    await new Promise((r) => setTimeout(r, 1500));
-    this.submitting = false;
-    // Tampilkan Bootstrap modal sukses
-    const modalEl = document.getElementById('successModal');
-    if (modalEl && window.bootstrap) {
-      new window.bootstrap.Modal(modalEl).show();
+    
+    try {
+      const formData = new FormData();
+      formData.append('description', this.description);
+      formData.append('photo', this.photoFile);
+
+      await api.post('/stories', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+
+      // Tampilkan Bootstrap modal sukses
+      const modalEl = document.getElementById('successModal');
+      if (modalEl && window.bootstrap) {
+        new window.bootstrap.Modal(modalEl).show();
+      }
+      this.resetForm();
+    } catch (error) {
+      const message = error.response?.data?.message || msg('Gagal mengunggah story. Pastikan file gambar valid dan ukuran max 1MB.');
+      this.errors = { ...this.errors, general: message };
+    } finally {
+      this.submitting = false;
     }
   }
  
@@ -131,6 +147,11 @@ class AddStoryForm extends LitElement {
  
     return html`
       <form novalidate @submit="${this._onSubmit}">
+        ${this.errors.general
+          ? html`<div class="alert alert-danger mb-4" role="alert">
+              <i class="bi bi-exclamation-triangle-fill me-2"></i> ${this.errors.general}
+            </div>`
+          : ''}
  
         <!-- Deskripsi -->
         <div class="form-field">
