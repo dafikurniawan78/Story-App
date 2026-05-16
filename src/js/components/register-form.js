@@ -75,6 +75,7 @@ class RegisterForm extends LitElement {
 
   render() {
     return html`
+      <p class="auth-page__subtitle">${msg('Bergabung dan bagikan ceritamu ke dunia')}</p>
       <form @submit="${this._onSubmit}">
         ${this.errorMsg
           ? html`<div class="alert alert-danger mb-4" role="alert">

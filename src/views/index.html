@@ -19,32 +19,7 @@
   <!-- STORIES SECTION -->
   <section class="stories-section" id="stories">
     <div class="container">
-      <div class="section-header">
-        <div>
-          <h2 class="section-header__title">Semua <span>Stories</span></h2>
-          <p class="section-header__subtitle"><i class="bi bi-clock me-1"></i>Diperbarui secara berkala</p>
-        </div>
-        <div class="d-flex align-items-center gap-3 flex-wrap">
-          <!-- Input Group (Bootstrap #2) -->
-          <div class="input-group input-group-sm" style="width:220px;">
-            <span class="input-group-text bg-white border-end-0"><i class="bi bi-search text-muted"></i></span>
-            <input type="text" id="searchInput" class="form-control border-start-0 ps-0" placeholder="Cari story..." oninput="filterStories(this.value)" />
-          </div>
-          <!-- Dropdown (Bootstrap #3) -->
-          <div class="dropdown">
-            <button class="btn btn-outline-secondary btn-sm dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown">
-              <i class="bi bi-filter me-1"></i>Filter
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 rounded-3">
-              <li><h6 class="dropdown-header">Urutkan</h6></li>
-              <li><a class="dropdown-item" href="#">Terbaru</a></li>
-              <li><a class="dropdown-item" href="#">Terlama</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">A-Z</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <stories-header></stories-header>
       <!-- Lit Component: story-list -->
       <story-list id="storyListEl"></story-list>
     </div>

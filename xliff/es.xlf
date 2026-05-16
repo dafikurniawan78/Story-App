@@ -306,6 +306,47 @@
   <source>Data Anda aman bersama kami</source>
   <target>Tus datos están seguros con nosotros</target>
 </trans-unit>
+<trans-unit id="h671a77f273d1f7c2">
+  <source>Semua <x id="0" equiv-text="&lt;span&gt;"/>Stories<x id="1" equiv-text="&lt;/span&gt;"/></source>
+  <target>Todas las <x id="0" equiv-text="&lt;span&gt;"/>Historias<x id="1" equiv-text="&lt;/span&gt;"/></target>
+</trans-unit>
+<trans-unit id="sd5423a3ab7cbfeb3">
+  <source>Diperbarui secara berkala</source>
+  <target>Actualizado regularmente</target>
+</trans-unit>
+<trans-unit id="s4d975adeba391f51">
+  <source>Cari story...</source>
+  <target>Buscar historia...</target>
+</trans-unit>
+<trans-unit id="s7c95876637f6a9d7">
+  <source>Filter</source>
+  <target>Filtro</target>
+</trans-unit>
+<trans-unit id="s9dc6df0014ca1203">
+  <source>Urutkan</source>
+  <target>Ordenar</target>
+</trans-unit>
+<trans-unit id="sea0f8f7911b36ea0">
+  <source>Terbaru</source>
+  <target>Más reciente</target>
+</trans-unit>
+<trans-unit id="s297103cc6f736fb5">
+  <source>Terlama</source>
+  <target>Más antiguo</target>
+</trans-unit>
+<trans-unit id="sfa6feb19a0aa362b">
+  <source>A-Z</source>
+  <target>A-Z</target>
+</trans-unit>
+
+<trans-unit id="s8afd76d8e6deccf2">
+  <source>Silakan login untuk membagikan ceritamu</source>
+  <target>Inicie sesión untuk compartir su historia</target>
+</trans-unit>
+<trans-unit id="s2b43fd0d339030fb">
+  <source>Bergabung dan bagikan ceritamu ke dunia</source>
+  <target>Únete y comparte tu historia con el mundo</target>
+</trans-unit>
 </body>
 </file>
 </xliff>

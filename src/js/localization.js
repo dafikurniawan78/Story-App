@@ -6,8 +6,8 @@ import * as enLocale from './generated/locales/en.js';
 import * as esLocale from './generated/locales/es.js';
 
 const localizedTemplates = new Map([
-  ['en', enLocale.templates],
-  ['es', esLocale.templates],
+  ['en', enLocale],
+  ['es', esLocale],
 ]);
 
 export const { getLocale, setLocale } = configureLocalization({
@@ -20,8 +20,14 @@ export const { getLocale, setLocale } = configureLocalization({
 
 // Fungsi pembungkus untuk menyimpan ke localStorage
 export const changeLocale = async (newLocale) => {
-  await setLocale(newLocale);
-  localStorage.setItem('locale', newLocale);
+  console.log(`Changing locale to: ${newLocale}`);
+  try {
+    await setLocale(newLocale);
+    localStorage.setItem('locale', newLocale);
+    console.log(`Locale successfully changed to: ${getLocale()}`);
+  } catch (e) {
+    console.error(`Failed to change locale to ${newLocale}:`, e);
+  }
 };
 
 // Inisialisasi bahasa dari localStorage saat pertama kali dimuat

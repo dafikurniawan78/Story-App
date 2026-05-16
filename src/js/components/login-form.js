@@ -65,6 +65,7 @@ class LoginForm extends LitElement {
 
   render() {
     return html`
+      <p class="auth-page__subtitle">${msg('Silakan login untuk membagikan ceritamu')}</p>
       <form @submit="${this._onSubmit}">
         ${this.errorMsg
           ? html`<div class="alert alert-danger mb-4" role="alert">

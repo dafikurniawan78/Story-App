@@ -14,6 +14,7 @@ import './components/locale-picker.js';
 import './components/login-form.js';
 import './components/register-form.js';
 import { Auth } from './utils/auth';
+import './components/stories-header.js';
 
 // ==============================
 // Route Protection
@@ -65,3 +66,18 @@ window.resetStoryForm = () => {
     formEl.resetForm();
   }
 };
+
+// ==============================
+// Manual Force Update on Locale Change
+// ==============================
+window.addEventListener('lit-localize-status', (event) => {
+  if (event.detail.status === 'ready') {
+    console.log(`Localization is ready for: ${event.detail.readyLocale}. Forcing update...`);
+    const allLitElements = document.querySelectorAll('*');
+    allLitElements.forEach(el => {
+      if (el.requestUpdate) {
+        el.requestUpdate();
+      }
+    });
+  }
+});

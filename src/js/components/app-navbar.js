@@ -41,6 +41,7 @@ class AppNavbar extends LitElement {
   }
 
   render() {
+    console.log(`Rendering AppNavbar. Current msg('Beranda') is: ${msg('Beranda')}`);
     return html`
       <!-- OFFCANVAS NAVIGATION -->
       <div class="offcanvas offcanvas-start offcanvas-story" tabindex="-1" id="offcanvasNav">

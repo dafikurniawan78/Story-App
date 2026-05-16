@@ -43,6 +43,7 @@ class LocalePicker extends LitElement {
   }
 
   _selectLocale(locale) {
+    console.log(`Locale Picker: User selected ${locale}`);
     if (locale !== this._currentLocale) {
       this._currentLocale = locale;
       changeLocale(locale);

@@ -2,14 +2,15 @@
     // Do not modify this file by hand!
     // Re-generate this file by running lit-localize
 
-    
+    import {html} from 'lit';
     import {str} from '@lit/localize';
 
     /* eslint-disable no-irregular-whitespace */
     /* eslint-disable @typescript-eslint/no-explicit-any */
 
     export const templates = {
-      's04dafc7f8d39d091': `Cargando historias…`,
+      'h671a77f273d1f7c2': html`Todas las <span>Historias</span>`,
+'s04dafc7f8d39d091': `Cargando historias…`,
 's0586ed892258f852': str`Historia de ${0}`,
 's07bef2850db005d7': `Foto`,
 's0c8eaf87554b2653': `Comunidad activa`,
@@ -25,13 +26,16 @@
 's25446a82f23db23a': `Publicar historia`,
 's27927f30dc301eed': `Privacidad protegida`,
 's287a0972c6466abd': `La descripción no puede estar vacía.`,
+'s297103cc6f736fb5': `Más antiguo`,
 's2b1152796101df65': `Hecho con`,
+'s2b43fd0d339030fb': `Únete y comparte tu historia con el mundo`,
 's2c8260436c037e62': `Sube fotos de hasta 5MB`,
 's3bc6869f9fe9531f': `Tus datos están seguros con nosotros`,
 's3cf0c263cd2dcba3': `¿Ya tienes una cuenta?`,
 's3d63a9c195e20efc': `Comentario`,
 's41c5d0cf29918419': `Haz clic o arrastra la foto aquí`,
 's45dab30b4d2d3c14': `Iniciar sesión`,
+'s4d975adeba391f51': `Buscar historia...`,
 's53d2b724b5dcc88c': `Error al iniciar sesión. Por favor, inténtalo de nuevo.`,
 's5acc4f812d492972': `Una plataforma para compartir historias y momentos preciosos con amigos y familiares. Captura cada recuerdo hermoso en una historia.`,
 's5cf35959a0c7f427': `Vista previa de la foto`,
@@ -46,12 +50,15 @@
 's79742ef470e72018': `Error al registrarse. El correo electrónico podría estar ya en uso.`,
 's7ae24e2336894d23': `¿No tienes una cuenta?`,
 's7c589da18f8a1330': `La contraseña debe tener al menos 8 caracteres`,
+'s7c95876637f6a9d7': `Filtro`,
 's843e76c5b725b7de': `El archivo debe ser una imagen (JPG, PNG, WEBP).`,
+'s8afd76d8e6deccf2': `Inicie sesión untuk compartir su historia`,
 's92535c1576f502f2': `Fotos de calidad`,
 's965c8b9b7067be50': `Procesando...`,
 's9b8c2601c788a0a7': `Intenta cambiar los términos de búsqueda o agrega una nueva historia.`,
 's9bbdf0ee9305250b': `Construido con Bootstrap 5, Lit 3 y Sass`,
 's9bf239e9713bdc0b': `Regístrate aquí`,
+'s9dc6df0014ca1203': `Ordenar`,
 's9e15a6ce4aa0c808': `Explorar historias`,
 'sa0b3a985c21f61c9': `Gratis`,
 'sa3dab4e5e56e7504': `Descripción mínima de 10 caracteres.`,
@@ -72,16 +79,19 @@
 'sce587fbecb82566b': `Error al subir la historia. Asegúrate de que el archivo de imagen sea válido y el tamaño máximo sea 1MB.`,
 'sd044d18d65c8503d': `Política de privacidad`,
 'sd1f44f1a8bc20e67': `Correo electrónico`,
+'sd5423a3ab7cbfeb3': `Actualizado regularmente`,
 'sd832b5d181c66952': `Compartir`,
 'sd8c69511c9f3d14e': `Nombre completo`,
 'sd93ff51dd0da1dbf': `Registrarse`,
 'sd9b925fec18ab36d': `Se requiere foto.`,
 'se1769325234cbba1': `Me gusta`,
 'se82adf9f537c58ae': `Términos y condiciones`,
+'sea0f8f7911b36ea0': `Más reciente`,
 'sea846ea04ea394e9': `JPG, PNG, WEBP • Máx. 5MB`,
 'sef1397a35894b5ba': str`¡La función ${0} estará disponible pronto!`,
 'sf6e1665c7022a1f8': `Contraseña`,
 'sf73e8803039ad57d': `¡Oops!`,
+'sfa6feb19a0aa362b': `A-Z`,
 'sfae357d460dcc835': `Agregar historia`,
 'sfc5673d7b8bf2b7c': `Recuerdos`,
 'sfe8a924dbab8a70e': `Tamaño máximo de archivo 5MB.`,

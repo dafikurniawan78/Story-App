@@ -2,14 +2,15 @@
     // Do not modify this file by hand!
     // Re-generate this file by running lit-localize
 
-    
+    import {html} from 'lit';
     import {str} from '@lit/localize';
 
     /* eslint-disable no-irregular-whitespace */
     /* eslint-disable @typescript-eslint/no-explicit-any */
 
     export const templates = {
-      's04dafc7f8d39d091': `Loading stories…`,
+      'h671a77f273d1f7c2': html`All <span>Stories</span>`,
+'s04dafc7f8d39d091': `Loading stories…`,
 's0586ed892258f852': str`Story by ${0}`,
 's07bef2850db005d7': `Photo`,
 's0c8eaf87554b2653': `Active Community`,
@@ -25,13 +26,16 @@
 's25446a82f23db23a': `Publish Story`,
 's27927f30dc301eed': `Privacy Protected`,
 's287a0972c6466abd': `Description cannot be empty.`,
+'s297103cc6f736fb5': `Oldest`,
 's2b1152796101df65': `Made with`,
+'s2b43fd0d339030fb': `Join and share your story with the world`,
 's2c8260436c037e62': `Upload photos up to 5MB`,
 's3bc6869f9fe9531f': `Your data is safe with us`,
 's3cf0c263cd2dcba3': `Already have an account?`,
 's3d63a9c195e20efc': `Comment`,
 's41c5d0cf29918419': `Click or drag photo here`,
 's45dab30b4d2d3c14': `Login`,
+'s4d975adeba391f51': `Search story...`,
 's53d2b724b5dcc88c': `Login failed. Please try again.`,
 's5acc4f812d492972': `A platform to share stories and precious moments with friends and family. Capture every beautiful memory in a story.`,
 's5cf35959a0c7f427': `Photo preview`,
@@ -46,12 +50,15 @@
 's79742ef470e72018': `Registration failed. Email might be already in use.`,
 's7ae24e2336894d23': `Don't have an account?`,
 's7c589da18f8a1330': `Password must be at least 8 characters`,
+'s7c95876637f6a9d7': `Filter`,
 's843e76c5b725b7de': `File must be an image (JPG, PNG, WEBP).`,
+'s8afd76d8e6deccf2': `Please login to share your story`,
 's92535c1576f502f2': `Quality Photos`,
 's965c8b9b7067be50': `Processing...`,
 's9b8c2601c788a0a7': `Try changing search terms or add a new story.`,
 's9bbdf0ee9305250b': `Built with Bootstrap 5, Lit 3 &amp; Sass`,
 's9bf239e9713bdc0b': `Register here`,
+'s9dc6df0014ca1203': `Sort`,
 's9e15a6ce4aa0c808': `Explore Stories`,
 'sa0b3a985c21f61c9': `Free`,
 'sa3dab4e5e56e7504': `Description min 10 characters.`,
@@ -72,16 +79,19 @@
 'sce587fbecb82566b': `Failed to upload story. Make sure image file is valid and max size 1MB.`,
 'sd044d18d65c8503d': `Privacy Policy`,
 'sd1f44f1a8bc20e67': `Email`,
+'sd5423a3ab7cbfeb3': `Updated regularly`,
 'sd832b5d181c66952': `Share`,
 'sd8c69511c9f3d14e': `Full Name`,
 'sd93ff51dd0da1dbf': `Register`,
 'sd9b925fec18ab36d': `Photo is required.`,
 'se1769325234cbba1': `Like`,
 'se82adf9f537c58ae': `Terms &amp; Conditions`,
+'sea0f8f7911b36ea0': `Newest`,
 'sea846ea04ea394e9': `JPG, PNG, WEBP • Max 5MB`,
 'sef1397a35894b5ba': str`Feature ${0} is coming soon!`,
 'sf6e1665c7022a1f8': `Password`,
 'sf73e8803039ad57d': `Oops!`,
+'sfa6feb19a0aa362b': `A-Z`,
 'sfae357d460dcc835': `Add Story`,
 'sfc5673d7b8bf2b7c': `Memories`,
 'sfe8a924dbab8a70e': `Max file size 5MB.`,
