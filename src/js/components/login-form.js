@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { msg } from '@lit/localize';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 import api from '../network/api';
 import { Auth } from '../utils/auth';
 
@@ -18,6 +18,7 @@ class LoginForm extends LitElement {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     this.email = '';
     this.password = '';
     this.showPassword = false;

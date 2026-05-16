@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { msg } from '@lit/localize';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 import { Auth } from '../utils/auth';
 
 class AppNavbar extends LitElement {
@@ -14,6 +14,7 @@ class AppNavbar extends LitElement {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     this.activePage = 'index';
     this._scrolled = false;
     this._handleScroll = this._handleScroll.bind(this);

@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { msg } from '@lit/localize';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 import api from '../network/api';
 
 class RegisterForm extends LitElement {
@@ -19,6 +19,7 @@ class RegisterForm extends LitElement {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     this.name = '';
     this.email = '';
     this.password = '';

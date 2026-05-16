@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { msg, str } from '@lit/localize';
+import { msg, str, updateWhenLocaleChanges } from '@lit/localize';
 import api from '../network/api';
 
 class AddStoryForm extends LitElement {
@@ -19,6 +19,7 @@ class AddStoryForm extends LitElement {
  
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     this.description  = '';
     this.photoFile    = null;
     this.photoPreview = '';

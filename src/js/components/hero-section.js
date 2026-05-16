@@ -1,7 +1,12 @@
 import { LitElement, html } from 'lit';
-import { msg } from '@lit/localize';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 
 class HeroSection extends LitElement {
+  constructor() {
+    super();
+    updateWhenLocaleChanges(this);
+  }
+  
   createRenderRoot() {
     return this;
   }

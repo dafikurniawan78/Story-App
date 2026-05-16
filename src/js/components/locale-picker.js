@@ -1,4 +1,5 @@
 import { LitElement, html } from 'lit';
+import { updateWhenLocaleChanges } from '@lit/localize';
 import { allLocales } from '../generated/locale-codes.js';
 import { getLocale, changeLocale } from '../localization.js';
 
@@ -15,6 +16,7 @@ class LocalePicker extends LitElement {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     this._currentLocale = getLocale();
     this._open = false;
     this.theme = 'dark';

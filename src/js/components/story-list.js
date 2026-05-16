@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { msg } from '@lit/localize';
+import { msg, updateWhenLocaleChanges } from '@lit/localize';
 import api from '../network/api';
 import './story-card.js';
  
@@ -18,6 +18,7 @@ class StoryList extends LitElement {
  
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     this.stories = [];
     this.loading = true;
     this.error   = '';

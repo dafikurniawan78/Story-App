@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-import { msg, str } from '@lit/localize';
+import { msg, str, updateWhenLocaleChanges } from '@lit/localize';
  
 class StoryCard extends LitElement {
   static properties = {
@@ -13,6 +13,7 @@ class StoryCard extends LitElement {
 
   constructor() {
     super();
+    updateWhenLocaleChanges(this);
     this.liked = false;
   }
  

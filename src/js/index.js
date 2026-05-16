@@ -1,6 +1,7 @@
 // Import our custom CSS
 import '../sass/main.scss';
 
+import './localization.js';
 import 'bootstrap';
 import './components/story-card.js';
 import './components/story-list.js';
